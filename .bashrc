@@ -12,6 +12,11 @@ export HISTCONTROL=ignoredups:erasedups     # no duplicate entries in history
 export EDITOR="emacsclient -t -a ''"        # $EDITOR use Emacs in terminal
 export VISUAL="emacsclient -c -a emacs"     # $VISUAL use Emacs in GUI mode
 
+# Node Version Manager (NVM)
+# https://github.com/nvm-sh/nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
