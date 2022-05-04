@@ -62,6 +62,10 @@ if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
 
+if [ -d "$HOME/.local/util" ] ;
+  then PATH="$HOME/.local/util:$PATH"
+fi
+
 # DOOM Emacs
 if [ -d "$HOME/.emacs.d/bin" ] ;
   then PATH="$HOME/.emacs.d/bin:$PATH"
