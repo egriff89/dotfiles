@@ -94,7 +94,7 @@ shopt -s checkwinsize   # checks term size when bash regains control
 bind "set completion-ignore-case on"
 
 # Alias for dotfiles bare repo
-alias gitcfg='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
+alias dtf='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 # Start Starship prompt
 eval "$(starship init bash)"
