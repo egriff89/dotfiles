@@ -70,7 +70,10 @@ alias fgrep='fgrep --color=auto'
 
 # Dotfiles bare repo alias
 alias dtf='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-
+alias dtfs='dtf status'
+alias dtfa='dtf add'
+alias dtfp='dtf push'
+alias dtfc='dtf commit'
 
 ### INIT STARSHIP PROMPT
 starship init fish | source

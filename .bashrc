@@ -95,6 +95,10 @@ bind "set completion-ignore-case on"
 
 # Alias for dotfiles bare repo
 alias dtf='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias dtfs='dtf status'
+alias dtfa='dtf add'
+alias dtfp='dtf push'
+alias dtfc='dtf commit'
 
 # Start Starship prompt
 eval "$(starship init bash)"
