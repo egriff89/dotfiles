@@ -9,11 +9,8 @@
 # First line removes the path; second line sets it.  Without the first line,
 # your path gets massive and fish becomes very slow.
 set -e fish_user_paths
-set -U fish_user_paths $HOME/.local/bin $HOME/.local/util $fish_user_paths
+set -U fish_user_paths $HOME/.local/bin $HOME/.local/util $HOME/.emacs.d/bin $fish_user_paths
 
-if test -f $HOME/.emacs.d/bin
-   set -U fish_user_paths $HOME/.emacs.d/bin $fish_user_paths
-end
 
 ### EXPORT ###
 set fish_greeting                                 # Supresses fish's intro message
