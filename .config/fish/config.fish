@@ -18,8 +18,8 @@ set TERM "xterm-256color"                         # Sets the terminal type
 set EDITOR "emacsclient -t -a ''"                 # $EDITOR use Emacs in terminal
 set VISUAL "emacsclient -c -a emacs"              # $VISUAL use Emacs in GUI mode
 
-### "nvim" as manpager
-set -x MANPAGER "nvim -c 'set ft=man' -"
+### "most" as manpager
+set -x MANPAGER "most"
 
 ### AUTOCOMPLETE AND HIGHLIGHT COLORS ###
 set fish_color_normal brcyan
