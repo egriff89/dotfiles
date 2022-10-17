@@ -72,5 +72,13 @@ alias dtfa='dtf add'
 alias dtfp='dtf push'
 alias dtfc='dtf commit'
 
+# Git aliases
+alias gits='git status'
+alias gita='git add'
+alias gitc='git commit'
+alias gitps='git push'
+alias gitpl='git pull'
+alias gitsh='git stash'
+
 ### INIT STARSHIP PROMPT
 starship init fish | source
