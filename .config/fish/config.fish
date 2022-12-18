@@ -15,8 +15,6 @@ set -U fish_user_paths $HOME/.local/bin $HOME/.local/util $HOME/.emacs.d/bin $fi
 ### EXPORT ###
 set fish_greeting                                 # Supresses fish's intro message
 set TERM "xterm-256color"                         # Sets the terminal type
-set EDITOR "emacsclient -t -a ''"                 # $EDITOR use Emacs in terminal
-set VISUAL "emacsclient -c -a emacs"              # $VISUAL use Emacs in GUI mode
 
 ### "most" as manpager
 set -x MANPAGER "most"
@@ -43,10 +41,8 @@ alias ls='ls -a --color=auto'
 alias ll='ls -lh'
 alias la='ls -alh'
 
-# vim and emacs
+# vim
 alias vim='nvim'
-alias em='/usr/bin/emacs -nw'
-alias emacs="emacsclient -c -a 'emacs'"
 
 # pacman
 alias pacsyu='sudo pacman -Syu'                  # update only standard pkgs
