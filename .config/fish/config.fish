@@ -48,6 +48,10 @@ alias la='ls -alh'
 # vim
 alias vim='nvim'
 
+# docker
+alias docker='sudo docker'
+alias dockerc='sudo docker-compose'
+
 # pacman
 alias pacsyu='sudo pacman -Syu'                  # update only standard pkgs
 alias pacsyyu='sudo pacman -Syyu'                # Refresh pkglist & update standard pkgs
