@@ -15,6 +15,8 @@ set -U fish_user_paths $HOME/.local/bin $HOME/.local/util $HOME/.emacs.d/bin $fi
 ### EXPORT ###
 set fish_greeting                                 # Supresses fish's intro message
 set TERM "xterm-256color"                         # Sets the terminal type
+set EDITOR "nvim"
+set VISUAL "nvim"
 
 ### "most" as manpager
 set -x MANPAGER "most"
