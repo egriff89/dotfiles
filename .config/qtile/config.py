@@ -6,6 +6,7 @@ from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
+import os
 
 mod = "mod4"            # SUPER/WINDOWS key
 terminal = "alacritty"
@@ -163,9 +164,9 @@ auto_minimize = True
 wl_input_rules = None
 
 # Autostart Applications
-nitrogen --restore &
-picom &
-/usr/bin/emacs --daemon &
+os.system('nitrogen --restore &')
+os.system('picom &')
+os.system('/usr/bin/emacs --daemon &')
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
