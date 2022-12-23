@@ -60,6 +60,15 @@ alias pacsyyu='sudo pacman -Syyu'                # Refresh pkglist & update stan
 alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)'  # remove orphaned packages
 
+# other package managers
+alias pn='pnpm'               # PNPM
+alias pni='pn install'        # install Node.js module
+alias pnu='pn uninstall'      # uninstall Node.js module
+alias pipi='pip install'      # install Python module
+alias pipu='pip uninstall'    # uninstall Python module
+alias pipl='pip list'         # list installed Python modules
+alias pipfr='pip freeze'      # list installed Python modules (requirements.txt format)
+
 # get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
 alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
