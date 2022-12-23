@@ -9,14 +9,13 @@
 ### EXPORTS
 export TERM="xterm-256color"                # proper terminal colors
 export HISTCONTROL=ignoredups:erasedups     # no duplicate entries in history
-export EDITOR="emacsclient -t -a ''"        # $EDITOR use Emacs in terminal
-export VISUAL="emacsclient -c -a emacs"     # $VISUAL use Emacs in GUI mode
+export EDITOR="nvim"
+export VISUAL="nvim"
 
-# Node Version Manager (NVM)
-# https://github.com/nvm-sh/nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -26,8 +25,10 @@ alias ls='ls -a --color=auto'
 alias ll='ls -lh'
 alias la='ls -alh'
 alias vim='nvim'
-alias em='/usr/bin/emacs -nw'
-alias emacs="emacsclient -c -a 'emacs'"
+
+# docker
+alias docker='sudo docker'
+alias dockerc='sudo docker-compose'
 
 # pacman
 alias pacsyu='sudo pacman -Syu'                     # update only standard pkgs
@@ -36,6 +37,15 @@ alias parsua='paru -Sua --noconfirm'                # update only AUR pkgs
 alias parsyu='paru -Syu --noconfirm'                # update standard pkgs and AUR pkgs
 alias unlock='sudo rm /var/lib/pacman/db.lck'       # remove pacman lock
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'    # remove orphaned packages
+
+# other package managers
+alias pn='pnpm'               # PNPM
+alias pni='pn install'        # install Node.js module
+alias pnu='pn uninstall'      # uninstall Node.js module
+alias pipi='pip install'      # install Python module
+alias pipu='pip uninstall'    # uninstall Python module
+alias pipl='pip list'         # list installed Python modules
+alias pipfr='pip freeze'      # list installed Python modules (requirements.txt format)
 
 # get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
