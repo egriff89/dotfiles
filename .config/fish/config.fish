@@ -57,6 +57,8 @@ alias dockerc='sudo docker-compose'
 # pacman
 alias pacsyu='sudo pacman -Syu'                  # update only standard pkgs
 alias pacsyyu='sudo pacman -Syyu'                # Refresh pkglist & update standard pkgs
+alias parsua='paru -Sua --noconfirm'             # update only AUR pkgs
+alias parsyu='paru -Syu --noconfirm'             # update standard pkgs and AUR pkgs
 alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)'  # remove orphaned packages
 
