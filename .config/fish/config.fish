@@ -47,14 +47,15 @@ alias ls='ls -a --color=auto'
 alias ll='ls -lh'
 alias la='ls -alh'
 
-# vim
+# editors
 alias vim='nvim'
+alias code='vscodium'
 
 # docker
 alias docker='sudo docker'
 alias dockerc='sudo docker-compose'
 
-# pacman
+# pacman / paru
 alias pacsyu='sudo pacman -Syu'                 # update only standard pkgs
 alias pacsyyu='sudo pacman -Syyu'               # Refresh pkglist & update standard pkgs
 alias pacss='pacman -Ss'                        # Search for standard pkgs
