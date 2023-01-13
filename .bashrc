@@ -30,6 +30,9 @@ alias vim='nvim'
 alias docker='sudo docker'
 alias dockerc='sudo docker-compose'
 
+# python
+alias py311='python3.11'
+
 # pacman
 alias pacsyu='sudo pacman -Syu'                  # update only standard pkgs
 alias pacsyyu='sudo pacman -Syyu'                # refresh pkglist & update standard pkgs

@@ -55,6 +55,9 @@ alias code='vscodium'
 alias docker='sudo docker'
 alias dockerc='sudo docker-compose'
 
+# python
+alias py311='python3.11'
+
 # pacman / paru
 alias pacsyu='sudo pacman -Syu'                 # update only standard pkgs
 alias pacsyyu='sudo pacman -Syyu'               # Refresh pkglist & update standard pkgs
