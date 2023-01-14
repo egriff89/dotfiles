@@ -56,7 +56,9 @@ alias docker='sudo docker'
 alias dockerc='sudo docker-compose'
 
 # python
-alias py311='python3.11'
+alias py311='/usr/bin/python3.11'       # Python 3.11 (AUR)
+alias pyv311='py311 -m venv'            # Create Python 3.11 virtual environment
+alias pyvenv='/usr/bin/python -m venv'  # Create virtual environment with system Python version
 
 # pacman / paru
 alias pacsyu='sudo pacman -Syu'                 # update only standard pkgs
