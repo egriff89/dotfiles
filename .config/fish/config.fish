@@ -29,8 +29,8 @@ set fish_color_error '#ff6c6b'
 set fish_color_param brcyan
 
 # pnpm
-set -gx PNPM_HOME "$HOME/.local/share/pnpm"
-set -gx PATH "$PNPM_HOME" $PATH
+set -x PNPM_HOME "$HOME/.local/share/pnpm"
+set -U PATH "$PNPM_HOME" $PATH
 # pnpm end
 
 ### ALIASES ###
@@ -57,6 +57,15 @@ alias dockerc='sudo docker-compose'
 
 # python
 alias py311='python3.11'
+
+# perl
+set -x PATH "$HOME/perl5/bin" $PATH
+set -q PERL5LIB; and set -x PERL5LIB "$HOME/perl5/lib/perl5":$PERL5LIB;
+set -q PERL5LIB; or set -x PERL5LIB "$HOME/perl5/lib/perl5";
+set -q PERL_LOCAL_LIB_ROOT; and set -x PERL_LOCAL_LIB_ROOT "$HOME/perl5":$PERL_LOCAL_LIB_ROOT;
+set -q PERL_LOCAL_LIB_ROOT; or set -x PERL_LOCAL_LIB_ROOT "$HOME/perl5";
+set -x PERL_MB_OPT --install_base\ \"$HOME/perl5\";
+set -x PERL_MM_OPT INSTALL_BASE=$HOME/perl5;
 
 # pacman / paru
 alias pacsyu='sudo pacman -Syu'                 # update only standard pkgs
