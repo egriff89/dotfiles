@@ -79,6 +79,12 @@ alias pipu='pip uninstall'    # uninstall Python module
 alias pipl='pip list'         # list installed Python modules
 alias pipfr='pip freeze'      # list installed Python modules (requirements.txt format)
 
+# tar compression
+alias tarxz='tar -cvJf'     # Create archive with xz compression (*.tar.xz)
+alias tarbz='tar -cvjf'     # Create archive with bzip2 compression (*.tar.bz2)
+alias targz='tar -cvzf'     # Create archive with gzip compression (*.tar.gz)
+alias tarcmp='tar -cvZf'    # Create archive using compress (*.tar.Z)
+
 # get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
 alias mirrord="sudo reflector --country \"United States\" --protocol https --fastest 30 --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
