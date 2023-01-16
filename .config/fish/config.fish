@@ -28,6 +28,10 @@ set fish_color_command brcyan
 set fish_color_error '#ff6c6b'
 set fish_color_param brcyan
 
+# bun
+set -x BUN_INSTALL "$HOME/.bun"
+set -U PATH "$BUN_INSTALL/bin" $PATH
+
 # pnpm
 set -x PNPM_HOME "$HOME/.local/share/pnpm"
 set -U PATH "$PNPM_HOME" $PATH
