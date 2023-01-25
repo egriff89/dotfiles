@@ -11,7 +11,6 @@
 set -e fish_user_paths
 set -U fish_user_paths $HOME/.local/bin $HOME/.local/util $HOME/.emacs.d/bin $fish_user_paths
 
-
 ### EXPORT ###
 set fish_greeting           # Supresses fish's intro message
 set TERM "xterm-256color"   # Sets the terminal type
@@ -29,12 +28,12 @@ set fish_color_error '#ff6c6b'
 set fish_color_param brcyan
 
 # bun
-set -x BUN_INSTALL "$HOME/.bun"
-set -U PATH "$BUN_INSTALL/bin" $PATH
+set -gx BUN_INSTALL "$HOME/.bun"
+fish_add_path $BUN_INSTALL/bin
 
 # pnpm
-set -x PNPM_HOME "$HOME/.local/share/pnpm"
-set -U PATH "$PNPM_HOME" $PATH
+set -gx PNPM_HOME "$HOME/.local/share/pnpm"
+fish_add_path $PNPM_HOME
 # pnpm end
 
 ### ALIASES ###
@@ -114,6 +113,7 @@ alias gitc='git commit'
 alias gitps='git push'
 alias gitpl='git pull'
 alias gitsh='git stash'
+
 
 ### INIT STARSHIP PROMPT
 starship init fish | source
