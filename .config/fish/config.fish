@@ -16,6 +16,7 @@ set fish_greeting           # Supresses fish's intro message
 set TERM "xterm-256color"   # Sets the terminal type
 set EDITOR "nvim"
 set VISUAL "nvim"
+set DOCKER_HOST unix://$XDG_RUNTIME_DIR/docker.sock
 
 ### "most" as manpager
 set -x MANPAGER "most"
@@ -46,7 +47,7 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
 # listing files
-alias ls='ls -a --color=auto'
+alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ls -alh'
 
@@ -67,6 +68,9 @@ alias parsua='paru -Sua'                        # update only AUR pkgs
 alias parsyu='paru -Syu'                        # update standard pkgs and AUR pkgs
 alias unlock='sudo rm /var/lib/pacman/db.lck'   # remove pacman lock
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)' # remove orphaned packages
+
+# rclone
+alias rmount='rclone mount'
 
 # other package managers
 alias pn='pnpm'               # PNPM
