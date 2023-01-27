@@ -53,10 +53,6 @@ alias la='ls -alh'
 # editors
 alias vim='nvim'
 
-# docker
-alias docker='sudo docker'
-alias dockerc='sudo docker-compose'
-
 # python
 alias py311='/usr/bin/python3.11'       # Python 3.11 (AUR)
 alias pyv311='py311 -m venv'            # Create Python 3.11 virtual environment
