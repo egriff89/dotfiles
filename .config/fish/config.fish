@@ -52,7 +52,6 @@ alias la='ls -alh'
 
 # editors
 alias vim='nvim'
-alias code='vscodium'
 
 # docker
 alias docker='sudo docker'
