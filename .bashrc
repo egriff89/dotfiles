@@ -11,6 +11,7 @@ export TERM="xterm-256color"                # proper terminal colors
 export HISTCONTROL=ignoredups:erasedups     # no duplicate entries in history
 export EDITOR="nvim"
 export VISUAL="nvim"
+export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
@@ -21,14 +22,10 @@ export PATH="$PNPM_HOME:$PATH"
 [[ $- != *i* ]] && return
 
 ### ALIASES
-alias ls='ls -a --color=auto'
+alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ls -alh'
 alias vim='nvim'
-
-# docker
-alias docker='sudo docker'
-alias dockerc='sudo docker-compose'
 
 # python
 alias py311='python3.11'
@@ -114,6 +111,14 @@ alias dtfs='dtf status'
 alias dtfa='dtf add'
 alias dtfp='dtf push'
 alias dtfc='dtf commit'
+
+# Git aliases
+alias gits='git status'
+alias gita='git add'
+alias gitc='git commit'
+alias gitps='git push'
+alias gitpl='git pull'
+alias gitsh='git stash'
 
 # Start Starship prompt
 eval "$(starship init bash)"
