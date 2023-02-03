@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=2.2.0-6
+Type=Application
+Name=AppImage Launcher
+Comment=A Helper application for running and integrating AppImages.
+Exec=appimagelauncherd
+StartupNotify=false
+Terminal=false
+Hidden=true
