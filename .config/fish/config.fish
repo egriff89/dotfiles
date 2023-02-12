@@ -56,7 +56,9 @@ alias vim='nvim'
 
 # python
 alias py311='/usr/bin/python3.11'       # Python 3.11 (AUR)
+alias py312='/usr/bin/python3.12'       # Python 3.12 alpha (AUR)
 alias pyv311='py311 -m venv'            # Create Python 3.11 virtual environment
+alias pyv312='py312 -m venv'            # Create Python 3.12 virtual environment
 alias pyvenv='/usr/bin/python -m venv'  # Create virtual environment with system Python version
 
 # pacman / paru
