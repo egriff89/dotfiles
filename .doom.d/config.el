@@ -74,3 +74,31 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; Display emojis. Can display Github style emojis like :smile: or plain ascii ones like :)
+(use-package emojify
+  :hook (after-init . global-emojify-mode))
+
+;; Line settings
+(map! :leader
+      :desc "Comment or uncomment lines"              "TAB TAB" #'comment-line
+      (:prefix ("t" . "toggle")
+               :desc "Toggle line numbers"            "l" #'doom/toggle-line-numbers
+               :desc "Toggle line highlight in frame" "h" #'hl-line-mode
+               :desc "Toggle line highlight globally" "H" #'global-hl-line-mode
+               :desc "Toggle truncate lines"          "t" #'toggle-truncate-lines))
+
+;; Rainbow mode displays actual color for any hex value color.
+(define-globalized-minor-mode global-rainbow-mode rainbow-mode
+  (lambda ()
+     (when (not (memq major-mode
+                      (list 'org-agenda-mode)))
+       (rainbow-mode 1))))
+(global-rainbow-mode 1)
+
+;; Various shell settings
+(setq shell-file-name "/bin/fish"
+      vterm-max-scrollback 5000)
+(map! :leader
+      :desc "Vterm toggle" "v t" #'+vterm/toggle
+      :desc "Eshell"       "e s" #'+eshell/toggle)

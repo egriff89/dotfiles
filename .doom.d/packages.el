@@ -49,5 +49,8 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
+(package! flycheck-aspell)
 (package! tldr)
 (package! fish-mode)
+(package! rainbow-mode)
+(package! emojify)
