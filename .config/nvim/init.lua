@@ -229,7 +229,25 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'help' },
+  ensure_installed = { 
+    'bash',
+    'c',
+    'cpp',
+    'css',
+    'fish',
+    'go',
+    'html',
+    'ini',
+    'javascript',
+    'json',
+    'lua',
+    'python',
+    'toml',
+    'tsx',
+    'typescript',
+    'vim',
+    'help',
+  },
 
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
@@ -346,17 +364,21 @@ end
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
   -- clangd = {},
-  -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
   -- tsserver = {},
-
-  sumneko_lua = {
-    Lua = {
-      workspace = { checkThirdParty = false },
-      telemetry = { enable = false },
+    gopls = {
+      Go = {
+        workspace = { checkThirdParty = false },
+        telemetry = { enable = false },
+      },
     },
-  },
+    lua_ls = {
+      Lua = {
+        workspace = { checkThirdParty = false },
+        telemetry = { enable = false },
+      },
+    },
 }
 
 -- Setup neovim lua configuration
