@@ -40,7 +40,7 @@ fish_add_path $PNPM_HOME
 ### ALIASES ###
 
 # general
-alias sudo='doas'
+# alias sudo='doas'
 
 # navigation
 alias ..='cd ..'

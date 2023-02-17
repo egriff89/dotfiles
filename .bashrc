@@ -30,7 +30,7 @@ alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ls -alh'
 alias vim='nvim'
-alias sudo='doas'
+# alias sudo='doas'
 
 # python
 alias py311='python3.11'
