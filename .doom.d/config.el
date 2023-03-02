@@ -75,6 +75,18 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+;;
+;; Select settings below adapted from https://gitlab.com/dwt1/dotfiles
+;;
+
+;; Never lose the cursor, shines when scrolling
+(beacon-mode 1)
+
+;; Keep buffers for visited files on disk up to date when modified by another program.
+;; Also enable global auto revert for non-file buffers.
+(global-auto-revert-mode 1)
+(setq global-auto-revert-non-file-buffers t)
+
 ;; Display emojis. Can display Github style emojis like :smile: or plain ascii ones like :)
 (use-package emojify
   :hook (after-init . global-emojify-mode))

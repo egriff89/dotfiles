@@ -54,3 +54,4 @@
 (package! fish-mode)
 (package! rainbow-mode)
 (package! emojify)
+(package! beacon)
