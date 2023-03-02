@@ -17,7 +17,13 @@ require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- File explorer
-  use 'preservim/nerdtree'
+  use {
+    'preservim/nerdtree',
+    requires = {
+      'Xuyuanp/nerdtree-git-plugin',
+      'ryanoasis/vim-devicons',
+    },
+  }
 
   use { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
