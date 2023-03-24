@@ -83,6 +83,10 @@ if [ -d "$HOME/.local/util" ] ;
   then PATH="$HOME/.local/util:$PATH"
 fi
 
+if [ -d "$HOME/.cargo/bin" ] ;
+  then PATH="$HOME/.cargo/bin:$PATH"
+fi
+
 # DOOM Emacs
 if [ -d "$HOME/.emacs.d/bin" ] ;
   then PATH="$HOME/.emacs.d/bin:$PATH"

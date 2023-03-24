@@ -10,6 +10,7 @@
 # your path gets massive and fish becomes very slow.
 set -e fish_user_paths
 set -U fish_user_paths \
+    $HOME/.cargo/bin \
     $HOME/.local/bin \
     $HOME/.local/util \
     $HOME/.emacs.d/bin \
