@@ -81,6 +81,14 @@ alias parsyu='paru -Syu'                        # update standard pkgs and AUR p
 alias unlock='sudo rm /var/lib/pacman/db.lck'   # remove pacman lock
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)' # remove orphaned packages
 
+# flatpak
+alias fps='flatpak search'
+alias fpin='flatpak install'
+alias fpup='flatpak update'
+alias fpun='flatpak uninstall'
+alias fpls='flatpak list'
+alias fpinfo='flatpak info'
+
 # rclone
 alias rmount='rclone mount'
 
