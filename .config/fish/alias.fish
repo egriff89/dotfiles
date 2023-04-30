@@ -1,8 +1,5 @@
 #!/usr/bin/env fish
 
-# general
-# alias sudo='doas'
-
 # navigation
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -26,14 +23,25 @@ alias pyv312='py312 -m venv'            # Create Python 3.12 virtual environment
 alias pyvenv='/usr/bin/python -m venv'  # Create virtual environment with system Python version
 
 # pacman / paru
+alias pacs='sudo pacman -S'                     # Install standard pkgs
 alias pacsyu='sudo pacman -Syu'                 # update only standard pkgs
 alias pacsyyu='sudo pacman -Syyu'               # Refresh pkglist & update standard pkgs
 alias pacss='pacman -Ss'                        # Search for standard pkgs
+alias parsa='paru -Sa'                          # Install AUR pkgs
 alias parssa='paru -Ssa'                        # Search for AUR pkgs
 alias parsua='paru -Sua'                        # update only AUR pkgs
 alias parsyu='paru -Syu'                        # update standard pkgs and AUR pkgs
 alias unlock='sudo rm /var/lib/pacman/db.lck'   # remove pacman lock
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)' # remove orphaned packages
+
+### other system utilities
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+if test (pacman -Qq | grep 'bat-extras')
+    alias diff='batdiff'
+end
 
 # flatpak
 alias fps='flatpak search'
@@ -68,10 +76,6 @@ alias mirrord="sudo reflector --country \"United States\" --protocol https --fas
 alias mirrors="sudo reflector --country \"United States\" --protocol https --fastest 30 --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
 alias mirrora="sudo reflector --country \"United States\" --protocol https --fastest 30 --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
 
-# Colorize grep output (good for log files)
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
 
 # Dotfiles bare repo alias
 alias dtf='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
