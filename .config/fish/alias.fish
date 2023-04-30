@@ -48,7 +48,8 @@ alias rmount='rclone mount'
 
 # other package managers
 alias pn='pnpm'               # PNPM
-alias pni='pn install'        # install Node.js module
+alias pni='pn install'        # install Node.js module (from package.json)
+alias pna='pn add'            # install a module and its dependencies
 alias pnu='pn uninstall'      # uninstall Node.js module
 alias pipi='pip install'      # install Python module
 alias pipu='pip uninstall'    # uninstall Python module
