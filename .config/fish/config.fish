@@ -25,8 +25,12 @@ set EDITOR "nvim"
 set VISUAL "nvim"
 set DOCKER_HOST unix://$XDG_RUNTIME_DIR/docker.sock
 
-### "most" as manpager
-set -x MANPAGER "most"
+### Set manpager
+if test -f /usr/bin/batman
+    set -x MANPAGER "batman"
+else
+    set -x MANPAGER "most"
+end
 
 ### AUTOCOMPLETE AND HIGHLIGHT COLORS ###
 set fish_color_normal brcyan
