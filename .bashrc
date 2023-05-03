@@ -13,6 +13,13 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
+### Set manpager
+if [ -f /usr/bin/batman ]; then
+    export MANPAGER="batman"
+else
+    export MANPAGER="most"
+fi
+
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
@@ -30,15 +37,18 @@ alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ls -alh'
 alias vim='nvim'
-# alias sudo='doas'
 
 # python
-alias py311='python3.11'
+alias py312='python3.12'                # Python 3.12 (AUR)
+alias pyv312='py312 -m venv'            # Create Python 3.12 virtual environment
+alias pyvenv='/usr/bin/python -m venv'  # Create virtual environment with system Python version
 
 # pacman
+alias pacs='sudo pacman -S'                      # install standard pkgs
 alias pacsyu='sudo pacman -Syu'                  # update only standard pkgs
 alias pacsyyu='sudo pacman -Syyu'                # refresh pkglist & update standard pkgs
 alias pacss='pacman -Ss'                         # search for standard pkgs
+alias parsa='paru -Sa'                           # Install AUR pkgs
 alias parssa='paru -Ssa'                         # search for AUR pkgs
 alias parsua='paru -Sua --noconfirm'             # update only AUR pkgs
 alias parsyu='paru -Syu --noconfirm'             # update standard pkgs and AUR pkgs
@@ -47,12 +57,21 @@ alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # remove orphaned packages
 
 # other package managers
 alias pn='pnpm'               # PNPM
-alias pni='pn install'        # install Node.js module
+alias pni='pn install'        # install Node.js module (from package.json)
+alias pna='pn add'            # install a Node.js module and its dependencies
 alias pnu='pn uninstall'      # uninstall Node.js module
 alias pipi='pip install'      # install Python module
 alias pipu='pip uninstall'    # uninstall Python module
 alias pipl='pip list'         # list installed Python modules
 alias pipfr='pip freeze'      # list installed Python modules (requirements.txt format)
+
+# flatpak
+alias fps='flatpak search'                                                      
+alias fpin='flatpak install'                                                    
+alias fpup='flatpak update'                                                     
+alias fpun='flatpak uninstall'                                                  
+alias fpls='flatpak list'                                                       
+alias fpinfo='flatpak info'
 
 # get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
@@ -65,6 +84,10 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
+### other system utilities
+if [ $(pacman -Qq | grep 'bat-extras') ]; then
+    alias diff='batdiff'
+fi
 
 ### PROMPT
 # Commented out when using Starship
