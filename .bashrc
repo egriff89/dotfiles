@@ -13,12 +13,14 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
-### Set manpager
-if [ -f /usr/bin/batman ]; then
-    export MANPAGER="batman"
-else
-    export MANPAGER="most"
-fi
+### Set MANPAGER
+### Uncomment only one of these. MANPAGER defaults to "less" if not specified.
+
+## "bat" as manpager
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+## "nvim" as manpager
+# export MANPAGER="nvim -c 'set ft=man' -"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"

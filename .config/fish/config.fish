@@ -25,12 +25,14 @@ set EDITOR "nvim"
 set VISUAL "nvim"
 set DOCKER_HOST unix://$XDG_RUNTIME_DIR/docker.sock
 
-### Set manpager
-if test -f /usr/bin/batman
-    set -x MANPAGER "batman"
-else
-    set -x MANPAGER "most"
-end
+### Set MANPAGER
+## Uncomment only one. MANPAGER defaults to "less" if nothing is specified. 
+
+## "bat" as manpager
+set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+
+## "nvim" as manpager
+# set -x MANPAGER "nvim -c 'set ft=man' -"
 
 ### AUTOCOMPLETE AND HIGHLIGHT COLORS ###
 set fish_color_normal brcyan
@@ -57,5 +59,9 @@ end
 # Direnv
 direnv hook fish | source
 
+# opam configuration
+source /home/eric/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+
 ### INIT STARSHIP PROMPT
 starship init fish | source
+
