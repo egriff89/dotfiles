@@ -47,4 +47,12 @@ return require('packer').startup(function(use)
             { 'L3MON4D3/LuaSnip' }, -- Required
         }
     }
+
+    use {
+        'folke/which-key.nvim',
+        config = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+        end
+    }
 end)
