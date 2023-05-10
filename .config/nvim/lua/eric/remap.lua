@@ -17,16 +17,13 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- greatest remap ever
--- Keep original copied text after copying over other text
-vim.keymap.set("x", "<leader>p", [["_dP]])
-
 -- next greatest remap ever : asbjornHaland
 -- Yank to system clipboard
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank to system clipboard" })
+vim.keymap.set("v", "<leader>y", [["+y]], { desc = "Yank selected text to system clipboard" })
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank line to system clipboard" })
 
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
+-- Delete line (normal) or selected text (visual) without copying 
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without copying" })
 
 -- Disable 'Q' in normal mode
 vim.keymap.set("n", "Q", "<nop>")
