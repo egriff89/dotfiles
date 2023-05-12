@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "[p]roject [v]iew" })
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "project view" })
 
 -- Move highlighted text up and down (Visual mode)
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -48,3 +48,13 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc =
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end, { desc = "Source current file" })
+
+-- Manage splits
+vim.keymap.set("n", "<leader>wv", "<C-w>v", { desc = "New vertical split" })
+vim.keymap.set("n", "<leader>ws", "<C-w>s", { desc = "New horizontal split" })
+vim.keymap.set("n", "<leader>wk", "<C-w>k", { desc = "Move up one window" })
+vim.keymap.set("n", "<leader>wj", "<C-w>j", { desc = "Move down one window" })
+vim.keymap.set("n", "<leader>wh", "<C-w>h", { desc = "Move left one window" })
+vim.keymap.set("n", "<leader>wl", "<C-w>l", { desc = "Move right one window" })
+vim.keymap.set("n", "<leader>wc", "<C-w>c", { desc = "Close active split" })
+vim.keymap.set("n", "<leader>wo", "<C-w>o", { desc = "Close all other windows" })
