@@ -49,8 +49,8 @@ alias fpun='flatpak uninstall'
 alias fpls='flatpak list'
 alias fpinfo='flatpak info'
 
-# rclone
 alias rmount='rclone mount'
+alias monerod='monerod --data-dir "$XDG_DATA_HOME"/bitmonero'
 
 # other package managers
 alias pn='pnpm'               # PNPM
