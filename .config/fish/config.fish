@@ -16,12 +16,12 @@ set -gx XDG_CACHE_HOME "$HOME/.cache"
 # your path gets massive and fish becomes very slow.
 set -e fish_user_paths
 set -U fish_user_paths \
-    $HOME/.cargo/bin \
+    $XDG_DATA_HOME/cargo/bin \
+    $XDG_DATA_HOME/luarocks/bin \
+    $XDG_DATA_HOME/nimble/bin \
     $HOME/.local/bin \
     $HOME/.local/util \
     $HOME/.emacs.d/bin \
-    $HOME/.nimble/bin \
-    $HOME/.luarocks/bin \
     $fish_user_paths
 
 ### EXPORT ###
