@@ -6,6 +6,12 @@
 #   https://gitlab.com/dwt1/dotfiles
 
 
+### Setting XDG environment
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+
 ### EXPORTS
 export TERM="xterm-256color"                # proper terminal colors
 export HISTCONTROL=ignoredups:erasedups     # no duplicate entries in history
@@ -31,6 +37,25 @@ export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
+### Miscellaneous exports
+export GOPATH="$XDG_DATA_HOME"/go
+export LEIN_HOME="$XDG_DATA_HOME"/lein
+export GNUPG_HOME="$XDG_DATA_HOME"/gnupg
+export NIMBLE_DIR="$XDG_DATA_HOME"/nimble
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
+export NUGET_PACKAGES="$XDG_CACHE_HOME"/NuGetPackages
+export OPAMROOT="$XDG_DATA_HOME"/opam
+export PYTHONSTARTUP="/etc/python/pythonrc"
+
+# Rust
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+
+# Haskell / GHC
+export GHCUP_USE_XDG_DIRS=true
+export STACK_XDG=1
+export STACK_ROOT="$XDG_DATA_HOME"/stack
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -38,7 +63,7 @@ export PATH="$PNPM_HOME:$PATH"
 alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ls -alh'
-alias vim='nvim'
+alias nv='/usr/bin/nvim'
 
 # python
 alias py312='python3.12'                # Python 3.12 (AUR)
