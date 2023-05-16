@@ -5,6 +5,9 @@
 # Some portions borrowed from the following repos:
 #   https://gitlab.com/dwt1/dotfiles
 
+# Enable Blesh - Bash syntax highlighting, autocompletion, etc
+# https://github.com/akinomyoga/ble.sh/wiki
+[[ $- == *i* ]] && source /usr/share/blesh/ble.sh --noattach
 
 ### Setting XDG environment
 export XDG_DATA_HOME="$HOME/.local/share"
