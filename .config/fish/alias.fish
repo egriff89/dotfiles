@@ -13,7 +13,7 @@ alias ll='ls -lh'
 alias la='ls -alh'
 
 # editors
-alias vim='env -u VIMINIT nvim'
+alias nv='/usr/bin/nvim'
 
 # python
 alias py312='/usr/bin/python3.12'       # Python 3.12 alpha (AUR)
