@@ -19,9 +19,9 @@ set -U fish_user_paths \
     $XDG_DATA_HOME/cargo/bin \
     $XDG_DATA_HOME/luarocks/bin \
     $XDG_DATA_HOME/nimble/bin \
+    $XDG_CONFIG_HOME/emacs/bin \
     $HOME/.local/bin \
     $HOME/.local/util \
-    $HOME/.emacs.d/bin \
     $fish_user_paths
 
 ### EXPORT ###
