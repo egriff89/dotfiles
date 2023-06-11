@@ -30,6 +30,7 @@ set TERM "xterm-256color"   # Sets the terminal type
 set EDITOR "nvim"
 set VISUAL "nvim"
 set DOCKER_HOST unix://$XDG_RUNTIME_DIR/docker.sock
+set EMACSDIR $XDG_CONFIG_HOME/emacs
 set DOOMDIR $XDG_CONFIG_HOME/doom
 
 ### Set MANPAGER
