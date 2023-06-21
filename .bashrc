@@ -36,7 +36,7 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # pnpm
-export PNPM_HOME="$HOME/.local/share/pnpm"
+export PNPM_HOME="$XDG_DATA_HOME"/pnpm
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
@@ -119,6 +119,10 @@ if [ $(pacman -Qq | grep 'bat-extras') ]; then
     alias diff='batdiff'
 fi
 
+if [ $(pacman -Qq | grep 'broot') ]; then
+    source "$XDG_CONFIG_HOME"/broot/launcher/bash/br
+fi
+
 ### PROMPT
 # Commented out when using Starship
 # PS1='[\u@\h \W]\$ '
@@ -136,13 +140,13 @@ if [ -d "$HOME/.local/util" ] ;
   then PATH="$HOME/.local/util:$PATH"
 fi
 
-if [ -d "$HOME/.cargo/bin" ] ;
-  then PATH="$HOME/.cargo/bin:$PATH"
+if [ -d "$CARGO_HOME/bin" ] ;
+  then PATH="$CARGO_HOME/bin:$PATH"
 fi
 
 # DOOM Emacs
-if [ -d "$HOME/.emacs.d/bin" ] ;
-  then PATH="$HOME/.emacs.d/bin:$PATH"
+if [ -d "$XDG_CONFIG_HOME/emacs/bin" ] ;
+  then PATH="$XDG_CONFIG_HOME/emacs/bin:$PATH"
 fi
 
 ## CHANGE TITLE OF TERMINALS
@@ -184,3 +188,4 @@ alias gitsh='git stash'
 
 # Start Starship prompt
 eval "$(starship init bash)"
+
