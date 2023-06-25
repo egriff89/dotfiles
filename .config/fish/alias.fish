@@ -49,8 +49,8 @@ alias fpun='flatpak uninstall'
 alias fpls='flatpak list'
 alias fpinfo='flatpak info'
 
+# rclone
 alias rmount='rclone mount'
-alias monerod='monerod --data-dir "$XDG_DATA_HOME"/bitmonero'
 
 # other package managers
 alias pn='pnpm'               # PNPM
@@ -73,7 +73,6 @@ alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacma
 alias mirrord="sudo reflector --country \"United States\" --protocol https --fastest 30 --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
 alias mirrors="sudo reflector --country \"United States\" --protocol https --fastest 30 --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
 alias mirrora="sudo reflector --country \"United States\" --protocol https --fastest 30 --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
-
 
 # Dotfiles bare repo alias
 alias dtf='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
