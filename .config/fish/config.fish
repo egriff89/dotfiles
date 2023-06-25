@@ -30,8 +30,9 @@ set TERM "xterm-256color"   # Sets the terminal type
 set EDITOR "nvim"
 set VISUAL "nvim"
 set DOCKER_HOST unix://$XDG_RUNTIME_DIR/docker.sock
-set DOOMDIR $XDG_CONFIG_HOME/doom
-set WINEPREFIX $XDG_DATA_HOME/wine
+
+set -gx DOOMDIR "$XDG_CONFIG_HOME"/doom
+set -gx WINEPREFIX "$XDG_DATA_HOME"/wine
 
 ### Set MANPAGER
 ## Uncomment only one. MANPAGER defaults to "less" if nothing is specified. 
@@ -77,9 +78,7 @@ set -gx GHCUP_USE_XDG_DIRS true
 set -gx STACK_XDG 1
 set -gx STACK_ROOT "$XDG_DATA_HOME"/stack
 
-
 ### ALIASES ###
-
 if test -f $HOME/.config/fish/alias.fish
     source $HOME/.config/fish/alias.fish
 end
@@ -88,7 +87,11 @@ end
 direnv hook fish | source
 
 # opam configuration
-source "$OPAMROOT"/opam-init/init.fish > /dev/null 2> /dev/null; or true
+if test -d "$OPAMROOT"
+    if string match -rqv "\/opam\/[\d\.\w]+\/bin" $PATH
+        source "$OPAMROOT"/opam-init/init.fish > /dev/null 2> /dev/null; or true
+    end
+end
 
 ### INIT STARSHIP PROMPT
 starship init fish | source
