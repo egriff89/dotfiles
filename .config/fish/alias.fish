@@ -39,6 +39,7 @@ alias fgrep='fgrep --color=auto'
 
 if test (pacman -Qq | grep 'bat-extras')
     alias diff='batdiff'
+    alias man='batman'
 end
 
 # flatpak
