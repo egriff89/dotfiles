@@ -38,10 +38,13 @@ set -gx WINEPREFIX "$XDG_DATA_HOME"/wine
 ## Uncomment only one. MANPAGER defaults to "less" if nothing is specified. 
 
 ## "bat" as manpager
-set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+# set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 ## "nvim" as manpager
 # set -x MANPAGER "nvim -c 'set ft=man' -"
+
+## "less" as manpager
+set -x MANPAGER "less"
 
 ### AUTOCOMPLETE AND HIGHLIGHT COLORS ###
 set fish_color_normal brcyan
