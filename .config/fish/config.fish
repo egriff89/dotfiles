@@ -71,6 +71,10 @@ set -gx NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME"/npm/npmrc
 set -gx NUGET_PACKAGES "$XDG_CACHE_HOME"/NuGetPackages
 set -gx OPAMROOT "$XDG_DATA_HOME"/opam
 set -gx PYTHONSTARTUP "/etc/python/pythonrc"
+set -Ux PYENV_ROOT "$XDG_DATA_HOME"/pyenv
+
+# Pyenv
+fish_add_path $PYENV_ROOT/bin
 
 # Rust
 set -gx RUSTUP_HOME "$XDG_DATA_HOME"/rustup
@@ -94,6 +98,11 @@ if test -d "$OPAMROOT"
     if string match -rqv "\/opam\/[\d\.\w]+\/bin" $PATH
         source "$OPAMROOT"/opam-init/init.fish > /dev/null 2> /dev/null; or true
     end
+end
+
+## init pyenv
+if command -v pyenv 1>/dev/null 2<&1
+    pyenv init - | source
 end
 
 ### INIT STARSHIP PROMPT
