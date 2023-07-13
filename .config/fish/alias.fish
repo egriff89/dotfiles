@@ -16,8 +16,6 @@ alias la='exa -lag --icons --group-directories-first'
 alias nv='/usr/bin/nvim'
 
 # python
-alias py312='/usr/bin/python3.12'       # Python 3.12 alpha (AUR)
-alias pyv312='py312 -m venv'            # Create Python 3.12 virtual environment
 alias pyvenv='/usr/bin/python -m venv'  # Create virtual environment with system Python version
 
 # pacman / paru
@@ -25,6 +23,10 @@ alias pacs='sudo pacman -S'                     # Install standard pkgs
 alias pacsyu='sudo pacman -Syu'                 # update only standard pkgs
 alias pacsyyu='sudo pacman -Syyu'               # Refresh pkglist & update standard pkgs
 alias pacss='pacman -Ss'                        # Search for standard pkgs
+alias pacqi='pacman -Qi'                        # Show info for installed pkg
+alias pacqs='pacman -Qs'                        # Query for local pkgs
+alias pacq='pacman -Q'                          # Show installed pkgs w/ version number
+alias pacqm='pacman -Qm'                        # Show installed foreign pkgs w/ version number (AUR)
 alias parsa='paru -Sa'                          # Install AUR pkgs
 alias parssa='paru -Ssa'                        # Search for AUR pkgs
 alias parsua='paru -Sua'                        # update only AUR pkgs
