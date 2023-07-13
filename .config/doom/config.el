@@ -91,6 +91,12 @@
 (use-package emojify
   :hook (after-init . global-emojify-mode))
 
+;; Enable Github-flavored Markdown/Org preview
+(use-package grip-mode
+  :ensure t
+  :bind (:map markdown-mode-command-map
+              ("g" . grip-mode)))
+
 ;; Line settings
 (map! :leader
       :desc "Comment or uncomment lines"              "TAB TAB" #'comment-line
