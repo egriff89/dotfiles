@@ -95,3 +95,9 @@ alias gitc='git commit'
 alias gitps='git push'
 alias gitpl='git pull'
 alias gitsh='git stash'
+
+# Doom Emacs
+alias dooms='doom sync'
+alias doomup='doom upgrade'
+alias doomcl='doom clean'
+alias doombld='doom build'
