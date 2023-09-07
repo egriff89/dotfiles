@@ -55,10 +55,6 @@ alias fpinfo='flatpak info'
 # rclone
 alias rmount='rclone mount'
 
-# Mount/Unmount Google Drive
-alias gdmount='google-drive-ocamlfuse $HOME/GoogleDrive'
-alias gdumount='fusermount -u $HOME/GoogleDrive'
-
 # other package managers
 alias pn='pnpm'               # PNPM
 alias pni='pn install'        # install Node.js module (from package.json)
