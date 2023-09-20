@@ -52,9 +52,6 @@ alias fpun='flatpak uninstall'
 alias fpls='flatpak list'
 alias fpinfo='flatpak info'
 
-# rclone
-alias rmount='rclone mount'
-
 # other package managers
 alias pn='pnpm'               # PNPM
 alias pni='pn install'        # install Node.js module (from package.json)
