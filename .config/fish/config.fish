@@ -106,7 +106,9 @@ if command -v pyenv 1>/dev/null 2<&1
 end
 
 ## init asdf (https://asdf-vm.com/)
-source /opt/asdf-vm/asdf.fish
+if test -d /opt/asdf-vm
+    source /opt/asdf-vm/asdf.fish
+end
 
 ### INIT STARSHIP PROMPT
 starship init fish | source
