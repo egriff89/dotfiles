@@ -45,7 +45,7 @@ if test (pacman -Qq | grep 'bat-extras')
 end
 
 # bisync aliases for Obsidian notes
-alias obsync='rclone bisync $HOME/Documents/Obsidian gdrive:Personal\ Docs/Obsidian -v'
+alias obsync='rclone bisync $HOME/Documents/Obsidian gdrive:PersonalDocs/Obsidian -v'
 alias obresync='obsync --resync'
 
 # flatpak
