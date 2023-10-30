@@ -17,8 +17,6 @@ set -gx XDG_CACHE_HOME "$HOME/.cache"
 set -e fish_user_paths
 set -U fish_user_paths \
     $XDG_DATA_HOME/cargo/bin \
-    $XDG_DATA_HOME/luarocks/bin \
-    $XDG_DATA_HOME/nimble/bin \
     $XDG_CONFIG_HOME/emacs/bin \
     $HOME/.local/bin \
     $HOME/.local/util \
@@ -66,11 +64,9 @@ fish_add_path $PNPM_HOME
 set -gx GOPATH "$XDG_DATA_HOME"/go
 set -gx LEIN_HOME "$XDG_DATA_HOME"/lein
 set -gx GNUPG_HOME "$XDG_DATA_HOME"/gnupg
-set -gx NIMBLE_DIR "$XDG_DATA_HOME"/nimble
 set -gx NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME"/npm/npmrc
 set -gx NUGET_PACKAGES "$XDG_CACHE_HOME"/NuGetPackages
 set -gx OPAMROOT "$XDG_DATA_HOME"/opam
-set -gx PYTHONSTARTUP "/etc/python/pythonrc"
 set -Ux PYENV_ROOT "$XDG_DATA_HOME"/pyenv
 
 # Pyenv
@@ -92,13 +88,6 @@ end
 
 # Direnv
 direnv hook fish | source
-
-# opam configuration
-if test -d "$OPAMROOT"
-    if string match -rqv "\/opam\/[\d\.\w]+\/bin" $PATH
-        source "$OPAMROOT"/opam-init/init.fish > /dev/null 2> /dev/null; or true
-    end
-end
 
 ## init pyenv
 if command -v pyenv 1>/dev/null 2<&1
