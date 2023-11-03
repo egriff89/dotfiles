@@ -5,10 +5,6 @@
 # Some portions borrowed from the following repos:
 #   https://gitlab.com/dwt1/dotfiles
 
-# Enable Blesh - Bash syntax highlighting, autocompletion, etc
-# https://github.com/akinomyoga/ble.sh/wiki
-[[ $- == *i* ]] && source /usr/share/blesh/ble.sh --noattach
-
 ### Setting XDG environment
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -44,7 +40,6 @@ export PATH="$PNPM_HOME:$PATH"
 export GOPATH="$XDG_DATA_HOME"/go
 export LEIN_HOME="$XDG_DATA_HOME"/lein
 export GNUPG_HOME="$XDG_DATA_HOME"/gnupg
-export NIMBLE_DIR="$XDG_DATA_HOME"/nimble
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 export NUGET_PACKAGES="$XDG_CACHE_HOME"/NuGetPackages
 export OPAMROOT="$XDG_DATA_HOME"/opam
@@ -122,10 +117,6 @@ fi
 if [ $(pacman -Qq | grep 'broot') ]; then
     source "$XDG_CONFIG_HOME"/broot/launcher/bash/br
 fi
-
-### PROMPT
-# Commented out when using Starship
-# PS1='[\u@\h \W]\$ '
 
 ### PATH
 if [ -d "$HOME/.bin" ] ;
