@@ -110,13 +110,9 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 ### other system utilities
-if [ "$(pacman -Qq | grep 'bat-extras')" ]; then
+if [[ "$(pacman -Qq | grep -q 'bat-extras')" -eq 0 ]]; then
     alias man='batman'
     alias diff='batdiff'
-fi
-
-if [ $(pacman -Qq | grep 'broot') ]; then
-    source "$XDG_CONFIG_HOME"/broot/launcher/bash/br
 fi
 
 ### PATH
