@@ -110,7 +110,8 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 ### other system utilities
-if [ $(pacman -Qq | grep 'bat-extras') ]; then
+if [ "$(pacman -Qq | grep 'bat-extras')" ]; then
+    alias man='batman'
     alias diff='batdiff'
 fi
 
