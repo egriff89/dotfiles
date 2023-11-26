@@ -75,7 +75,7 @@ fish_add_path $PYENV_ROOT/bin
 # Rust
 set -gx RUSTUP_HOME "$XDG_DATA_HOME"/rustup
 set -gx CARGO_HOME "$XDG_DATA_HOME"/cargo
-
+        
 # Haskell / GHC
 set -gx GHCUP_USE_XDG_DIRS true
 set -gx STACK_XDG 1
@@ -97,6 +97,11 @@ end
 ## init asdf (https://asdf-vm.com/)
 if test -d /opt/asdf-vm
     source /opt/asdf-vm/asdf.fish
+end
+
+# opam
+if test -f /usr/bin/opam
+    eval (/usr/bin/opam env)
 end
 
 ### INIT STARSHIP PROMPT
