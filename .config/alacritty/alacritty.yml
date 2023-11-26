@@ -107,6 +107,7 @@ scrolling:
 #tabspaces: 8
 
 # Font configuration
+# Drama Sans font can be found here: https://drama-sans.github.io/drama-sans/
 font:
   # Normal (roman) font face
   normal:
@@ -117,6 +118,7 @@ font:
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
     # family: Source Code Pro
+    # family: Drama Sans 
     family: FiraCode Nerd Font
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
@@ -137,6 +139,7 @@ font:
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
     # family: Source Code Pro
+    # family: Drama Sans
     family: FiraCode Nerd Font
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
@@ -157,6 +160,7 @@ font:
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
     # family: Source Code Pro
+    # family: Drama Sans
     family: FiraCode Nerd Font
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
@@ -177,6 +181,7 @@ font:
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
     # family: Source Code Pro
+    # family: Drama Sans
     family: FiraCode Nerd Font
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
