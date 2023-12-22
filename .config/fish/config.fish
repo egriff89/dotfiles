@@ -17,6 +17,7 @@ set -gx XDG_CACHE_HOME "$HOME/.cache"
 set -e fish_user_paths
 set -U fish_user_paths \
     $XDG_DATA_HOME/cargo/bin \
+    $XDG_DATA_HOME/go/bin \
     $XDG_CONFIG_HOME/emacs/bin \
     $HOME/.local/bin \
     $HOME/.local/util \
