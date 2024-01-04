@@ -1,3 +1,2 @@
-require("eric.remap")
 require("eric.set")
-require("eric.packer")
+require("eric.remap")
