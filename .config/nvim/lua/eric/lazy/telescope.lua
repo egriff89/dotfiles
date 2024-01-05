@@ -10,4 +10,3 @@ return {
         end, { desc = "Grep string" })
     end
 }
-
