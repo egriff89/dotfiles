@@ -2,4 +2,4 @@
 
 **Current actions:**
 - [x] ~~Migrate from Packer to Lazy~~
-- [ ] Get LSP autocomplete/suggestions working
+- [x] ~~Get LSP autocomplete/suggestions working~~
