@@ -2,7 +2,7 @@
 -- Author: Eric Griffith
 -- http://www.gitlab.com/egriff89
 
-local wezterm = require 'wezterm'
+local wezterm = require("wezterm")
 
 local config = {}
 
@@ -13,6 +13,6 @@ end
 config.color_scheme = 'DoomOne'
 config.window_background_opacity = 0.90
 config.font = wezterm.font 'FiraCode Nerd Font'
-config.font_size = 10.0
+config.font_size = 09.0
 
 return config
