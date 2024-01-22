@@ -1,0 +1,38 @@
+{
+    "calva.paredit.defaultKeyMap": "original",
+    "editor.detectIndentation": false,
+    "editor.fontSize": 14,
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "Drama Sans, FiraCode Nerd Font, monospace",
+    "explorer.confirmDelete": false,
+    "files.associations": {
+        "fish_variables": "fish"
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "ocaml.repl.useUtop": true,
+    "[ocaml.ocamlformat]": {
+        "editor.formatOnSave": true
+    },
+    "[python]": {
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.wordBasedSuggestions": "off"
+    },
+    "[rust]": {
+        "editor.formatOnSave": true,
+    },
+    "rust-analyzer.check.command": "clippy",
+    "rust-analyzer.cargo.sysroot": "/home/eric/.local/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu",
+    "rust-analyzer.cargo.sysrootSrc": "/home/eric/.local/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library",
+    "security.workspace.trust.untrustedFiles": "open",
+    "svelte.enable-ts-plugin": true,
+    "sync.gist": "2e1b0f8d1eb883f7cb39a1e9e0ac0488",
+    "sync.quietSync": true,
+    "terminal.integrated.enablePersistentSessions": false,
+    "terminal.integrated.gpuAcceleration": "on",
+    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.defaultProfile.linux": "fish",
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.startupEditor": "none",
+    "git.confirmSync": false,
+}
