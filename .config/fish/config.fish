@@ -21,6 +21,8 @@ set -U fish_user_paths \
     $XDG_CONFIG_HOME/emacs/bin \
     $HOME/.local/bin \
     $HOME/.local/util \
+    $HOME/.nimble/bin \
+    $HOME/.modular/pkg/packages.modular.com_mojo/bin \
     $fish_user_paths
 
 ### EXPORT ###
@@ -69,6 +71,7 @@ set -gx NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME"/npm/npmrc
 set -gx NUGET_PACKAGES "$XDG_CACHE_HOME"/NuGetPackages
 set -gx OPAMROOT "$XDG_DATA_HOME"/opam
 set -Ux PYENV_ROOT "$XDG_DATA_HOME"/pyenv
+set -gx LD_LIBRARY_PATH "$LD_LIBRARY_PATH":"$HOME/.local/lib/mojo"
 
 # Pyenv
 fish_add_path $PYENV_ROOT/bin
