@@ -1,9 +1,9 @@
 {
     "calva.paredit.defaultKeyMap": "original",
     "editor.detectIndentation": false,
-    "editor.fontSize": 14,
+    "editor.fontSize": 12,
     "editor.fontLigatures": true,
-    "editor.fontFamily": "Drama Sans, FiraCode Nerd Font, monospace",
+    "editor.fontFamily": "FiraCode Nerd Font, Drama Sans, monospace",
     "explorer.confirmDelete": false,
     "files.associations": {
         "fish_variables": "fish"
@@ -14,8 +14,10 @@
         "editor.formatOnSave": true
     },
     "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": true,
+        "editor.wordBasedSuggestions": "off",
         "diffEditor.ignoreTrimWhitespace": false,
-        "editor.wordBasedSuggestions": "off"
     },
     "[rust]": {
         "editor.formatOnSave": true,
