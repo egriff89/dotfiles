@@ -8,7 +8,7 @@ return {
                 null_ls.builtins.formatting.prettier,
                 null_ls.builtins.formatting.yamlfmt,
                 null_ls.builtins.formatting.goimports,
-                null_ls.builtins.diagnostics.eslint_d,
+                null_ls.builtins.formatting.isort,
             },
         })
     end,
