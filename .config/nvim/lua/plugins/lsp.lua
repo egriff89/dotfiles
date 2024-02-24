@@ -3,7 +3,15 @@ return {
         "williamboman/mason.nvim",
         lazy = false,
         config = function()
-            require("mason").setup()
+            require("mason").setup({
+                ui = {
+                    icons = {
+                        package_installed = "✓",
+                        package_pending = "➜",
+                        package_uninstalled = "✗",
+                    },
+                },
+            })
         end,
     },
 
@@ -11,7 +19,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         lazy = false,
         opts = {
-            auto_install = true
+            auto_install = true,
         },
     },
 
@@ -23,28 +31,31 @@ return {
 
             local lspconfig = require("lspconfig")
             lspconfig.lua_ls.setup({
-                capabilities = capabilities
+                capabilities = capabilities,
             })
             lspconfig.bashls.setup({
-                capabilities = capabilities
+                capabilities = capabilities,
             })
             lspconfig.rust_analyzer.setup({
-                capabilities = capabilities
+                capabilities = capabilities,
             })
             lspconfig.pylsp.setup({
-                capabilities = capabilities
+                capabilities = capabilities,
             })
             lspconfig.ruff_lsp.setup({
-                capabilities = capabilities
+                capabilities = capabilities,
             })
             lspconfig.gopls.setup({
-                capabilities = capabilities
+                capabilities = capabilities,
+            })
+            lspconfig.eslint.setup({
+                capabilities = capabilities,
             })
 
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go to definition" })
             vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "View references" })
             vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
-        end
+        end,
     },
 }
