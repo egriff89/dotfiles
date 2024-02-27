@@ -1,4 +1,5 @@
 return {
+    { "folke/neodev.nvim", opts = {} },
     {
         "williamboman/mason.nvim",
         lazy = false,
@@ -28,6 +29,7 @@ return {
         lazy = false,
         config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
+            require("neodev").setup({})
 
             local lspconfig = require("lspconfig")
             lspconfig.lua_ls.setup({
@@ -49,6 +51,9 @@ return {
                 capabilities = capabilities,
             })
             lspconfig.eslint.setup({
+                capabilities = capabilities,
+            })
+            lspconfig.jsonls.setup({
                 capabilities = capabilities,
             })
 
