@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "project view" })
+vim.keymap.set("n", "<leader>ob", "<cmd>:Oil<CR>", { desc = "Oil" })
+vim.keymap.set("n", "<leader>of", "<cmd>:Oil --float<CR>", { desc = "Oil (float)" })
 
 vim.keymap.set("n", "<leader>wd", "<cmd>:Dashboard<CR>")
 
@@ -24,7 +25,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("v", "<leader>y", [["+y]], { desc = "Yank selected text to system clipboard" })
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank line to system clipboard" })
 
--- Delete line (normal) or selected text (visual) without copying 
+-- Delete line (normal) or selected text (visual) without copying
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without copying" })
 
 -- Disable 'Q' in normal mode
@@ -34,15 +35,19 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "Format text" })
 
 -- Replace word currently under cursor
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-    { desc = "Replace word under cursor" })
+vim.keymap.set(
+	"n",
+	"<leader>s",
+	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+	{ desc = "Replace word under cursor" }
+)
 
 -- Mark current file as executable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Mark current file executable" })
 
 -- Source current file
 vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
+	vim.cmd("so")
 end, { desc = "Source current file" })
 
 -- Manage splits
