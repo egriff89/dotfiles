@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", "<cmd>:Dired<CR>", { desc = "project view (Dired)" })
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "project view" })
 
 vim.keymap.set("n", "<leader>wd", "<cmd>:Dashboard<CR>")
 
