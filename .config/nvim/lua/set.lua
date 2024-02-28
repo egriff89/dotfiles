@@ -1,14 +1,15 @@
--- Fat cursor
+-- Fat cursor and cursor line highlight
 vim.opt.guicursor = ""
+vim.opt.cursorline = true
 
 -- Show line numbers
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
 -- Set tabs and indentation
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
@@ -19,8 +20,7 @@ vim.opt.wrap = false
 vim.opt.swapfile = false
 vim.opt.backup = false
 
--- Location for to store undo list (for UndoTree package)
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+-- Enable persistent undo history
 vim.opt.undofile = true
 
 -- Don't keep searches highlighted
@@ -29,16 +29,24 @@ vim.opt.hlsearch = false
 -- Highlight searches incrementally
 vim.opt.incsearch = true
 
--- Nice terminal colors
+-- Enable 24-bit color
 vim.opt.termguicolors = true
 
--- Always show previous 8 lines when scrolling down
-vim.opt.scrolloff = 8
+-- Enable the sign column to prevent the screen from jumping
 vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
+
+-- Place a column line
+vim.opt.colorcolumn = "80"
+
+-- Always show 8 lines above/below cursor unless at start/end of file 
+vim.opt.scrolloff = 8
 
 -- Refresh changed content op opened file (in ms)
-vim.opt.updatetime = 750
+vim.opt.updatetime = 50
+
+-- Better splits
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 
 -- Misc
 vim.g.mapleader = " "
