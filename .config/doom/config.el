@@ -115,8 +115,9 @@
 (global-rainbow-mode 1)
 
 ;; Various shell settings
-(setq shell-file-name "/bin/fish"
-      vterm-max-scrollback 5000)
+(setq shell-file-name (executable-find "bash"))
+(setq-default vterm-shell (executable-find "fish"))
+(setq-default explicit-shell-file-name (executable-find "fish"))
 (map! :leader
       :desc "Vterm toggle" "v t" #'+vterm/toggle
       :desc "Eshell"       "e s" #'+eshell/toggle)
