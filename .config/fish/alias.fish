@@ -18,6 +18,8 @@ alias nv='/usr/bin/nvim'
 # python
 alias pyvenv='/usr/bin/python -m venv'  # Create virtual environment with system Python version
 
+alias mips="java -jar $HOME/.local/bin/Mars4_5.jar"
+
 # pacman / paru
 alias pacs='sudo pacman -S'                     # Install standard pkgs
 alias pacsyu='sudo pacman -Syu'                 # update only standard pkgs
@@ -92,9 +94,3 @@ alias gitc='git commit'
 alias gitps='git push'
 alias gitpl='git pull'
 alias gitsh='git stash'
-
-# Doom Emacs
-alias dooms='doom sync'
-alias doomup='doom upgrade'
-alias doomcl='doom clean'
-alias doombld='doom build'
