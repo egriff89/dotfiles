@@ -1,9 +1,12 @@
--- Plugins with little to no extra config added and will be nroken
+-- Plugins with little to no extra config added and will be broken
 -- out to separate files if needed.
 
 return {
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
+
+  -- Delete, change, and add surroundings in pairs
+  'tpope/vim-surround',
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
