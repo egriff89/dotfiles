@@ -8,7 +8,7 @@ local act = wezterm.action
 local config = {}
 
 if wezterm.config_builder then
-  config = wezterm.config_builder()
+	config = wezterm.config_builder()
 end
 
 -- Appearance settings
@@ -23,16 +23,26 @@ config.use_fancy_tab_bar = false -- Retro appearance
 
 -- Keybinds
 config.keys = {
-  {
-    key = "t",
-    mods = "SHIFT|ALT",
-    action = act.SpawnTab("CurrentPaneDomain"),
-  },
-  {
-    key = "c",
-    mods = "SHIFT|ALT",
-    action = act.CloseCurrentTab({ confirm = true }),
-  },
+	{
+		key = "t",
+		mods = "SHIFT|ALT",
+		action = act.SpawnTab("CurrentPaneDomain"),
+	},
+	{
+		key = "c",
+		mods = "SHIFT|ALT",
+		action = act.CloseCurrentTab({ confirm = true }),
+	},
+	{
+		key = "[",
+		mods = "ALT",
+		action = act.ActivateTabRelative(-1),
+	},
+	{
+		key = "]",
+		mods = "ALT",
+		action = act.ActivateTabRelative(1),
+	},
 }
 
 return config
