@@ -74,7 +74,6 @@ set -gx OPAMROOT "$XDG_DATA_HOME"/opam
 set -Ux PYENV_ROOT "$XDG_DATA_HOME"/pyenv
 set -gx KERL_CONFIGURE_OPTIONS "--with-odbc=/var/lib/pacman/local/unixodbc-2.3.12-1" # use ODBC (unixodbc)
 # set -gx KERL_CONFIGURE_OPTIONS "--without-odbc" # do not use ODBC
-set -gx ASDF_CONFIG_FILE "$XDG_CONFIG_HOME"/asdf/.asdfrc
 set -gx ASDF_DATA_DIR "$HOME"/.local/share/asdf # XDG vars don't work apparently
 
 # Pyenv
