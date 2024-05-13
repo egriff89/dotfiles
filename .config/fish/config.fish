@@ -61,7 +61,9 @@ fish_add_path $BUN_INSTALL/bin
 
 # pnpm
 set -gx PNPM_HOME "$HOME/.local/share/pnpm"
-fish_add_path $PNPM_HOME
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
 # pnpm end
 
 ### Miscellaneous exports
