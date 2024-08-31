@@ -60,7 +60,7 @@ set -gx BUN_INSTALL "$HOME/.bun"
 fish_add_path $BUN_INSTALL/bin
 
 # pnpm
-set -gx PNPM_HOME "$HOME/.local/share/pnpm"
+set -gx PNPM_HOME "$XDG_DATA_HOME/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH
 end
@@ -69,13 +69,14 @@ end
 ### Miscellaneous exports
 set -gx GOPATH "$XDG_DATA_HOME"/go
 set -gx LEIN_HOME "$XDG_DATA_HOME"/lein
-set -gx GNUPG_HOME "$XDG_DATA_HOME"/gnupg
+set -gx GNUPGHOME "$XDG_DATA_HOME"/gnupg
 set -gx NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME"/npm/npmrc
 set -gx NUGET_PACKAGES "$XDG_CACHE_HOME"/NuGetPackages
 set -gx OPAMROOT "$XDG_DATA_HOME"/opam
 set -gx KERL_CONFIGURE_OPTIONS "--with-odbc=/var/lib/pacman/local/unixodbc-2.3.12-1" # use ODBC (unixodbc)
 # set -gx KERL_CONFIGURE_OPTIONS "--without-odbc" # do not use ODBC
 set -gx ASDF_DATA_DIR "$HOME"/.local/share/asdf # XDG vars don't work apparently
+set -gx PIPENV_VENV_IN_PROJECT 1
 
 # Rust
 set -gx RUSTUP_HOME "$XDG_DATA_HOME"/rustup
