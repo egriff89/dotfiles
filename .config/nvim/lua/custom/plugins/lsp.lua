@@ -107,7 +107,7 @@ return {
         ruff_lsp = {},
         rust_analyzer = {},
         taplo = {},
-        tsserver = {},
+        ts_ls = {},
 
         lua_ls = {
           -- cmd = {...},
