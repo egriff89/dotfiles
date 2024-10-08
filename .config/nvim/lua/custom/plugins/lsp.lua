@@ -105,9 +105,7 @@ return {
         -- pyright = {},
         pylsp = {},
         ruff_lsp = {},
-        rust_analyzer = {},
         taplo = {},
-        ts_ls = {},
 
         lua_ls = {
           -- cmd = {...},
@@ -144,7 +142,6 @@ return {
         'stylua', -- Used to format lua code
         'goimports',
         'isort',
-        'prettierd',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -174,6 +171,7 @@ return {
       formatters_by_ft = {
         lua = { 'stylua' },
         python = { 'isort' },
+        go = { 'gofumpt', 'goimports' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
