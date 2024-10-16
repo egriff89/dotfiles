@@ -101,8 +101,9 @@ if test -d /opt/asdf-vm
 end
 
 # opam
-if test -f /usr/bin/opam
-    eval (/usr/bin/opam env)
+set OPAM (which opam)
+if test -f $OPAM
+    eval ($OPAM env)
 end
 
 ### INIT STARSHIP PROMPT
