@@ -46,6 +46,9 @@ if test (pacman -Qq | grep 'bat-extras')
     alias man='batman'
 end
 
+### typo aliases
+alias clera='clear'
+
 # bisync aliases for Obsidian notes
 alias obsync='rclone bisync $HOME/Documents/Obsidian gdrive:PersonalDocs/Obsidian -v'
 alias obresync='obsync --resync'
@@ -92,5 +95,6 @@ alias gits='git status'
 alias gita='git add'
 alias gitc='git commit'
 alias gitps='git push'
-alias gitpl='git pull'
-alias gitsh='git stash'
+alias gitco='git checkout'
+alias gitsw='git switch'
+
