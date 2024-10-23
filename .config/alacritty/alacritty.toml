@@ -2,6 +2,7 @@
 # Author: Eric Griffith
 # http://www.gitlab.com/egriff89
 
+[general]
 import = [
     # "~/.config/alacritty/themes/themes/doom_one.toml",
     # "~/.config/alacritty/themes/themes/tokyo-night.toml",
@@ -66,3 +67,4 @@ bindings = [
     { key = "F11", mods = "None", action = "ToggleFullscreen" },
     { key = "L", mods = "Control", action = "ClearLogNotice" },
 ]
+
