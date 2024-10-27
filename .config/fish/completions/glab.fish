@@ -79,7 +79,7 @@ function __glab_clear_perform_completion_once_result
     __glab_debug ""
     __glab_debug "========= clearing previously set __glab_perform_completion_once_result variable =========="
     set --erase __glab_perform_completion_once_result
-    __glab_debug "Succesfully erased the variable __glab_perform_completion_once_result"
+    __glab_debug "Successfully erased the variable __glab_perform_completion_once_result"
 end
 
 function __glab_requires_order_preservation
