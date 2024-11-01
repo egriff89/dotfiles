@@ -146,6 +146,14 @@ return {
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
+      -- Manually setup Gleam LSP if it exists
+      if os.execute 'which gleam' then
+        require('lspconfig')['gleam'].setup {
+          cmd = { 'gleam', 'lsp' },
+          filetypes = { 'gleam' },
+        }
+      end
+
       require('mason-lspconfig').setup {
         handlers = {
           function(server_name)
