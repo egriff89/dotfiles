@@ -105,7 +105,7 @@ return {
         jsonls = {},
         -- pyright = {},
         pylsp = {},
-        ruff_lsp = {},
+        ruff = {},
         taplo = {},
 
         lua_ls = {
@@ -179,7 +179,7 @@ return {
       },
       formatters_by_ft = {
         lua = { 'stylua' },
-        python = { 'ruff_format', 'ruff_organize_imports' },
+        python = { 'ruff' },
         go = { 'gofumpt', 'goimports' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
