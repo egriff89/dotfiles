@@ -10,6 +10,7 @@ import = [
 ]
 
 [window]
+startup_mode = "Maximized"
 dynamic_padding = false
 opacity = 0.95
 title = "Alacritty"
@@ -67,4 +68,3 @@ bindings = [
     { key = "F11", mods = "None", action = "ToggleFullscreen" },
     { key = "L", mods = "Control", action = "ClearLogNotice" },
 ]
-
