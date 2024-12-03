@@ -20,8 +20,8 @@ general = "Alacritty"
 instance = "Alacritty"
 
 [window.padding]
-x = 6
-y = 6
+x = 4
+y = 4
 
 [scrolling]
 history = 5000
@@ -33,19 +33,19 @@ TERM = "xterm-256color"
 size = 9.0
 
 [font.bold]
-family = "FiraCode Nerd Font"
+family = "JetBrains Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "FiraCode Nerd Font"
+family = "JetBrains Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "FiraCode Nerd Font"
+family = "JetBrains Mono"
 style = "Italic"
 
 [font.normal]
-family = "FiraCode Nerd Font"
+family = "JetBrains Mono"
 style = "Regular"
 
 [font.offset]
