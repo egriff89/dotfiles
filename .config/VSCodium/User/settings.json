@@ -3,15 +3,29 @@
     "editor.detectIndentation": false,
     "editor.fontSize": 12,
     "editor.fontLigatures": true,
-    "editor.fontFamily": "FiraCode Nerd Font, Drama Sans, monospace",
+    "editor.fontFamily": "JetBrains Mono, FiraCode Nerd Font, monospace",
     "explorer.confirmDelete": false,
-    "files.associations": {
-        "fish_variables": "fish"
+    "git.confirmSync": false,
+    "gleam.path": "/home/eric/.local/share/asdf/shims/gleam",
+    "[gleam]": {
+        "editor.defaultFormatter": "gleam.gleam"
+    },
+    "[go]": {
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "never"
+        }
     },
     "go.toolsManagement.autoUpdate": true,
     "ocaml.repl.useUtop": true,
-    "[ocaml.ocamlformat]": {
-        "editor.formatOnSave": true
+    "ocaml.server.extendedHover": true,
+    "ocaml.server.syntaxDocumentation": true,
+    "ocaml-formatter.eval-opam-env": true,
+    "ocaml-formatter.profile": "own",
+    "[ocaml]": {
+        "editor.defaultFormatter": "badochov.ocaml-formatter",
+        "editor.formatOnSave": true,
     },
     "[python]": {
         "editor.defaultFormatter": "charliermarsh.ruff",
@@ -22,6 +36,7 @@
     "[rust]": {
         "editor.formatOnSave": true,
     },
+    "ruff.nativeServer": "on",
     "rust-analyzer.check.command": "clippy",
     "rust-analyzer.cargo.sysroot": "/home/eric/.local/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu",
     "rust-analyzer.cargo.sysrootSrc": "/home/eric/.local/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library",
@@ -33,8 +48,9 @@
     "terminal.integrated.gpuAcceleration": "on",
     "terminal.integrated.fontSize": 12,
     "terminal.integrated.defaultProfile.linux": "fish",
-    "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+    "terminal.integrated.fontFamily": "JetBrains Mono",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "none",
-    "git.confirmSync": false,
+    "redhat.telemetry.enabled": true,
+    "explorer.confirmDragAndDrop": false,
 }
