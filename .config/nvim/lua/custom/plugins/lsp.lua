@@ -103,7 +103,7 @@ return {
         bashls = {},
         gopls = {},
         jsonls = {},
-        -- pyright = {},
+        basedpyright = {},
         pylsp = {},
         ruff = {},
         taplo = {},
