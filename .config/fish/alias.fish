@@ -48,10 +48,8 @@ end
 
 ### typo aliases
 alias clera='clear'
-
-# bisync aliases for Obsidian notes
-alias obsync='rclone bisync $HOME/Documents/Obsidian gdrive:PersonalDocs/Obsidian -v'
-alias obresync='obsync --resync'
+alias cleare='clear'
+alias claer='clear'
 
 # flatpak
 alias fps='flatpak search'
@@ -66,6 +64,7 @@ alias pn='pnpm'               # PNPM
 alias pni='pn install'        # install Node.js module (from package.json)
 alias pna='pn add'            # install a module and its dependencies
 alias pnu='pn uninstall'      # uninstall Node.js module
+alias pnsu='pn self-update'   # Self-update PNPM
 alias pipi='pip install'      # install Python module
 alias pipu='pip uninstall'    # uninstall Python module
 alias pipl='pip list'         # list installed Python modules
