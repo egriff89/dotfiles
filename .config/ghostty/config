@@ -1,11 +1,31 @@
-theme = tokyonight-storm
+# ~/.config/ghostty/config
+# Author: Eric Griffith
+# https://gitlab.com/egriff89
 
-fullscreen = true
-window-inherit-font-size = false
-window-padding-x = 4
+theme = tokyonight-storm
 font-size = 10
 
+### Disable Adwaita decorations and GTK titlebar because not everyone uses or likes GNOME
+gtk-adwaita = false
+gtk-titlebar = false
+
+### Window settings
+window-theme = system
+window-inherit-font-size = false
+window-padding-x = 4
+
+### Keybinds
 keybind = ctrl+t=new_tab
-keybind = ctrl+alt+c=close_window
 keybind = ctrl+]=next_tab
 keybind = ctrl+[=previous_tab
+
+## Splits
+keybind = shift+ctrl+h=new_split:left
+keybind = shift+ctrl+j=new_split:down
+keybind = shift+ctrl+k=new_split:up
+keybind = shift+ctrl+l=new_split:right
+
+keybind = shift+ctrl+alt+h=goto_split:left
+keybind = shift+ctrl+alt+j=goto_split:bottom
+keybind = shift+ctrl+alt+k=goto_split:top
+keybind = shift+ctrl+alt+l=goto_split:right
