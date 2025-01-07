@@ -51,14 +51,6 @@ alias clera='clear'
 alias cleare='clear'
 alias claer='clear'
 
-# flatpak
-alias fps='flatpak search'
-alias fpin='flatpak install'
-alias fpup='flatpak update'
-alias fpun='flatpak uninstall'
-alias fpls='flatpak list'
-alias fpinfo='flatpak info'
-
 # other package managers
 alias pn='pnpm'               # PNPM
 alias pni='pn install'        # install Node.js module (from package.json)
