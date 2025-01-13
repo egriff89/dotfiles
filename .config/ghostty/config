@@ -3,7 +3,7 @@
 # https://gitlab.com/egriff89
 
 theme = tokyonight-storm
-font-size = 10
+font-size = 9
 
 ### Disable Adwaita decorations and GTK titlebar because not everyone uses or likes GNOME
 gtk-adwaita = false
