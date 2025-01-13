@@ -12,20 +12,18 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
 
 ### EXPORTS
-export TERM="xterm-256color"                # proper terminal colors
 export HISTCONTROL=ignoredups:erasedups     # no duplicate entries in history
 export EDITOR="nvim"
 export VISUAL="nvim"
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+export DOOMDIR="$XDG_CONFIG_HOME/doom"
+export WINEPREFIX="$XDG_DATA_HOME/wine"
 
 ### Set MANPAGER
 ### Uncomment only one of these. MANPAGER defaults to "less" if not specified.
 
 ## "bat" as manpager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
-## "nvim" as manpager
-# export MANPAGER="nvim -c 'set ft=man' -"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -43,7 +41,9 @@ export GNUPG_HOME="$XDG_DATA_HOME"/gnupg
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 export NUGET_PACKAGES="$XDG_CACHE_HOME"/NuGetPackages
 export OPAMROOT="$XDG_DATA_HOME"/opam
-export PYTHONSTARTUP="/etc/python/pythonrc"
+export KERL_CONFIGURE_OPTIONS="--with-odbc=/var/lib/pacman/local/unixodbc-2.3.*/" # use ODBC (unixodbc)
+export ASDF_DATA_DIR="$HOME/.local/share/asdf"
+export PIPENV_VENV_IN_PROJECT=1
 
 # Rust
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
@@ -173,6 +173,20 @@ alias gitc='git commit'
 alias gitps='git push'
 alias gitpl='git pull'
 alias gitsh='git stash'
+
+# Direnv
+eval "$(direnv hook bash)"
+
+# init asdf (https://asdf-vm.com)
+if [ -d /opt/asdf-vm ]; then
+  source /opt/asdf-vm/asdf.sh
+fi
+
+# opam
+OPAM=$(which opam)
+if [ -f "$OPAM" ]; then
+  eval "$($OPAM env)"
+fi
 
 # Start Starship prompt
 eval "$(starship init bash)"
