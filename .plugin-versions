@@ -1,9 +1,11 @@
 asdf-plugin-manager  https://github.com/asdf-community/asdf-plugin-manager.git  b5862c1
 clojure              https://github.com/asdf-community/asdf-clojure.git         790f4f9
-direnv               https://github.com/asdf-community/asdf-direnv.git          6ff3dbe
-elixir               https://github.com/asdf-vm/asdf-elixir.git                 a4c42e1
-erlang               https://github.com/asdf-vm/asdf-erlang.git                 826ad0e
+direnv               https://github.com/asdf-community/asdf-direnv.git          951acd3
+elixir               https://github.com/asdf-vm/asdf-elixir.git                 ea84283
+erlang               https://github.com/asdf-vm/asdf-erlang.git                 945e7fb
 gleam                https://github.com/vic/asdf-gleam.git                      82a21e0
 golang               https://github.com/asdf-community/asdf-golang.git          e2527a3
 leiningen            https://github.com/miorimmax/asdf-lein.git                 dfd8ab1
+odin                 https://github.com/jtakakura/asdf-odin                     f9bb6c4
 opam                 https://github.com/asdf-community/asdf-opam.git            347e24d
+zig                  https://github.com/cheetah/asdf-zig.git                    9d11e5b
