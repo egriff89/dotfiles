@@ -24,11 +24,11 @@ set -U fish_user_paths \
     $HOME/.local/util \
     $HOME/.luarocks/bin \
     $HOME/.nimble/bin \
-    $fish_user_paths
+    $HOME/.modular/bin
 
 ### EXPORT ###
 set fish_greeting           # Supresses fish's intro message
-set TERM "xterm-256color"   # Sets the terminal type
+# set TERM "xterm-256color"   # Sets the terminal type
 set EDITOR "nvim"
 set VISUAL "nvim"
 set DOCKER_HOST unix://$XDG_RUNTIME_DIR/docker.sock
@@ -108,4 +108,4 @@ end
 
 ### INIT STARSHIP PROMPT
 starship init fish | source
-
+zoxide init fish | source
