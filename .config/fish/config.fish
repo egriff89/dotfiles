@@ -16,10 +16,9 @@ set -gx XDG_CACHE_HOME "$HOME/.cache"
 # your path gets massive and fish becomes very slow.
 set -e fish_user_paths
 set -U fish_user_paths \
-    $XDG_DATA_HOME/cargo/bin \
-    $XDG_DATA_HOME/go/bin \
-    $XDG_CONFIG_HOME/emacs/bin \
-    $XDG_CACHE_HOME/rebar3/bin \
+    $XDG_DATA_HOME \
+    $XDG_CONFIG_HOME \
+    $XDG_CACHE_HOME \
     $HOME/.local/bin \
     $HOME/.local/util \
     $HOME/.luarocks/bin \
@@ -28,7 +27,6 @@ set -U fish_user_paths \
 
 ### EXPORT ###
 set fish_greeting           # Supresses fish's intro message
-# set TERM "xterm-256color"   # Sets the terminal type
 set EDITOR "nvim"
 set VISUAL "nvim"
 set DOCKER_HOST unix://$XDG_RUNTIME_DIR/docker.sock
@@ -37,14 +35,6 @@ set -gx DOOMDIR "$XDG_CONFIG_HOME"/doom
 set -gx WINEPREFIX "$XDG_DATA_HOME"/wine
 
 ### Set MANPAGER
-## Uncomment only one. MANPAGER defaults to "less" if nothing is specified. 
-
-## "bat" as manpager
-# set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
-
-## "nvim" as manpager
-# set -x MANPAGER "nvim -c 'set ft=man' -"
-
 ## "less" as manpager
 set -x MANPAGER "less"
 
@@ -81,7 +71,7 @@ set -gx PIPENV_VENV_IN_PROJECT 1
 # Rust
 set -gx RUSTUP_HOME "$XDG_DATA_HOME"/rustup
 set -gx CARGO_HOME "$XDG_DATA_HOME"/cargo
-        
+
 # Haskell / GHC
 set -gx GHCUP_USE_XDG_DIRS true
 set -gx STACK_XDG 1
