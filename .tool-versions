@@ -9,3 +9,4 @@ opam 2.3.0
 direnv 2.35.0
 zig 0.13.0
 odin dev-2025-01
+pipx 1.7.1

@@ -6,6 +6,7 @@ erlang               https://github.com/asdf-vm/asdf-erlang.git                 
 gleam                https://github.com/vic/asdf-gleam.git                      82a21e0
 golang               https://github.com/asdf-community/asdf-golang.git          e2527a3
 leiningen            https://github.com/miorimmax/asdf-lein.git                 dfd8ab1
-odin                 https://github.com/jtakakura/asdf-odin                     f9bb6c4
+odin                 https://github.com/jtakakura/asdf-odin                     1d51f25
 opam                 https://github.com/asdf-community/asdf-opam.git            347e24d
+pipx                 https://github.com/yozachar/asdf-pipx.git                  31db618
 zig                  https://github.com/cheetah/asdf-zig.git                    9d11e5b
