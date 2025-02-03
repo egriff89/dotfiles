@@ -11,14 +11,15 @@ set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx XDG_STATE_HOME "$HOME/.local/state"
 set -gx XDG_CACHE_HOME "$HOME/.cache"
 
- ### ADDING TO THE PATH
+### ADDING TO THE PATH
 # First line removes the path; second line sets it.  Without the first line,
 # your path gets massive and fish becomes very slow.
 set -e fish_user_paths
-set -U fish_user_paths \
+set -gx fish_user_paths \
     $XDG_DATA_HOME \
-    $XDG_CONFIG_HOME \
     $XDG_CACHE_HOME \
+    $XDG_CONFIG_HOME \
+    $XDG_CONFIG_HOME/emacs/bin \
     $HOME/.local/bin \
     $HOME/.local/util \
     $HOME/.luarocks/bin \
@@ -26,9 +27,9 @@ set -U fish_user_paths \
     $HOME/.modular/bin
 
 ### EXPORT ###
-set fish_greeting           # Supresses fish's intro message
-set EDITOR "nvim"
-set VISUAL "nvim"
+set fish_greeting # Supresses fish's intro message
+set EDITOR nvim
+set VISUAL nvim
 set DOCKER_HOST unix://$XDG_RUNTIME_DIR/docker.sock
 
 set -gx DOOMDIR "$XDG_CONFIG_HOME"/doom
@@ -36,7 +37,7 @@ set -gx WINEPREFIX "$XDG_DATA_HOME"/wine
 
 ### Set MANPAGER
 ## "less" as manpager
-set -x MANPAGER "less"
+set -x MANPAGER less
 
 ### AUTOCOMPLETE AND HIGHLIGHT COLORS ###
 set fish_color_normal brcyan
@@ -50,9 +51,9 @@ set -gx BUN_INSTALL "$HOME/.bun"
 fish_add_path $BUN_INSTALL/bin
 
 # pnpm
-set -gx PNPM_HOME "$XDG_DATA_HOME/pnpm"
+set -gx PNPM_HOME "/home/eric/.local/share/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
 
@@ -65,8 +66,10 @@ set -gx NUGET_PACKAGES "$XDG_CACHE_HOME"/NuGetPackages
 set -gx OPAMROOT "$XDG_DATA_HOME"/opam
 set -gx KERL_CONFIGURE_OPTIONS "--with-odbc=/var/lib/pacman/local/unixodbc-2.3.12-1" # use ODBC (unixodbc)
 # set -gx KERL_CONFIGURE_OPTIONS "--without-odbc" # do not use ODBC
-set -gx ASDF_DATA_DIR "$HOME"/.local/share/asdf # XDG vars don't work apparently
 set -gx PIPENV_VENV_IN_PROJECT 1
+
+set -gx ASDF_DATA_DIR "$HOME"/.local/share/asdf # XDG vars don't work apparently
+fish_add_path -p ASDF_DATA_DIR
 
 # Rust
 set -gx RUSTUP_HOME "$XDG_DATA_HOME"/rustup
@@ -84,11 +87,6 @@ end
 
 # Direnv
 direnv hook fish | source
-
-## init asdf (https://asdf-vm.com/)
-if test -d /opt/asdf-vm
-    source /opt/asdf-vm/asdf.fish
-end
 
 # opam
 set OPAM (which opam)
