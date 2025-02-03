@@ -53,4 +53,8 @@
     "workbench.startupEditor": "none",
     "redhat.telemetry.enabled": true,
     "explorer.confirmDragAndDrop": false,
+    "extensions.allowed": "*",
+    "zig.zls.enabled": "on",
+    "calva.clojureLspPath": "/usr/bin/clojure-lsp",
+    "calva.fmt.configPath": "CLOJURE-LSP",
 }

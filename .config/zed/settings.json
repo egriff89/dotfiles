@@ -8,7 +8,7 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "buffer_font_size": 13,
-  "ui_font_size": 16,
+  "ui_font_size": 14,
   "ui_font_family": "JetBrains Mono",
   "theme": {
     "mode": "system",
@@ -18,6 +18,13 @@
   "languages": {
     "Python": {
       "language_servers": ["basedpyright", "ruff"]
+    },
+    "Clojure": {
+      "language_servers": ["clojure-lsp"]
+    },
+    "Odin": {
+      "language_servers": ["ols"]
     }
-  }
+  },
+  "lsp": {}
 }
