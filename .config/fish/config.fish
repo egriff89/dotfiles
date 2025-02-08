@@ -16,10 +16,11 @@ set -gx XDG_CACHE_HOME "$HOME/.cache"
 # your path gets massive and fish becomes very slow.
 set -e fish_user_paths
 set -gx fish_user_paths \
-    $XDG_DATA_HOME \
     $XDG_CACHE_HOME \
     $XDG_CONFIG_HOME \
     $XDG_CONFIG_HOME/emacs/bin \
+    $XDG_DATA_HOME \
+    $XDG_DATA_HOME/asdf/shims \
     $HOME/.local/bin \
     $HOME/.local/util \
     $HOME/.luarocks/bin \
@@ -59,6 +60,8 @@ end
 
 ### Miscellaneous exports
 set -gx GOPATH "$XDG_DATA_HOME"/go
+fish_add_path "$GOPATH"/bin
+
 set -gx LEIN_HOME "$XDG_DATA_HOME"/lein
 set -gx GNUPGHOME "$XDG_DATA_HOME"/gnupg
 set -gx NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME"/npm/npmrc
@@ -69,7 +72,6 @@ set -gx KERL_CONFIGURE_OPTIONS "--with-odbc=/var/lib/pacman/local/unixodbc-2.3.1
 set -gx PIPENV_VENV_IN_PROJECT 1
 
 set -gx ASDF_DATA_DIR "$HOME"/.local/share/asdf # XDG vars don't work apparently
-fish_add_path -p ASDF_DATA_DIR
 
 # Rust
 set -gx RUSTUP_HOME "$XDG_DATA_HOME"/rustup
