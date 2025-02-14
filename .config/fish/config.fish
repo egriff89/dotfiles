@@ -67,8 +67,6 @@ set -gx GNUPGHOME "$XDG_DATA_HOME"/gnupg
 set -gx NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME"/npm/npmrc
 set -gx NUGET_PACKAGES "$XDG_CACHE_HOME"/NuGetPackages
 set -gx OPAMROOT "$XDG_DATA_HOME"/opam
-set -gx KERL_CONFIGURE_OPTIONS "--with-odbc=/var/lib/pacman/local/unixodbc-2.3.12-1" # use ODBC (unixodbc)
-# set -gx KERL_CONFIGURE_OPTIONS "--without-odbc" # do not use ODBC
 set -gx PIPENV_VENV_IN_PROJECT 1
 
 set -gx ASDF_DATA_DIR "$HOME"/.local/share/asdf # XDG vars don't work apparently
