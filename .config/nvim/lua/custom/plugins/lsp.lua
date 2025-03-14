@@ -154,6 +154,16 @@ return {
         }
       end
 
+      -- Manually setup Nushell LSP if it exists.
+      -- Still unfinished, per https://github.com/nushell/nushell/issues/11439
+      if os.execute 'which nu' then
+        require('lspconfig')['nu'].setup {
+          cmd = { 'nu', '--lsp' },
+          filetypes = { 'nu' },
+        }
+      end
+
+      -- Setup Fish lsp
       if os.execute 'which fish-lsp' then
         require('lspconfig')['fish_lsp'].setup {
           cmd = { 'fish-lsp', 'start' },
