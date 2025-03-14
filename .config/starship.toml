@@ -29,6 +29,8 @@ disabled = false
 [shell]
 bash_indicator = "bash"
 fish_indicator = "fish"
+elvish_indicator = "elv "
+nu_indicator = "nu  "
 style = "cyan bold"
 format = "[$indicator]($style)"
 disabled = false
