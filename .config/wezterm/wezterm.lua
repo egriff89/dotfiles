@@ -12,9 +12,12 @@ if wezterm.config_builder then
 end
 
 -- Appearance settings
-config.color_scheme = "DoomOne"
-config.window_background_opacity = 0.90
-config.font = wezterm.font("FiraCode Nerd Font")
+config.color_scheme = "TokyoNight-Storm"
+config.window_background_opacity = 0.95
+config.font = wezterm.font_with_fallback({
+	"JetBrains Mono",
+	"FiraCode Nerd Font",
+})
 config.font_size = 09.0
 
 -- Tab bar settings
