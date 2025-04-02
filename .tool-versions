@@ -2,9 +2,8 @@ elixir 1.18.3-otp-27
 gleam 1.9.1
 leiningen 2.11.2
 clojure 1.12.0.1530
-golang 1.24.1
+golang 1.24.2
 opam 2.3.0
 direnv 2.35.0
 zig 0.14.0
 pipx 1.7.1
-pkl 0.28.1
