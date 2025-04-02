@@ -9,6 +9,7 @@
 (setq user-full-name "Eric Griffith"
       user-mail-address "eric.griffith42@gmail.com")
 
+
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
 ;; - `doom-font' -- the primary font to use
@@ -28,6 +29,7 @@
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
 ;; refresh your font settings. If Emacs still can't find your font, it likely
 ;; wasn't installed correctly. Font issues are rarely Doom issues!
+(setq doom-font (font-spec :family "JetBrains Mono" :size 12))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
