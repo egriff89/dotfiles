@@ -1,6 +1,6 @@
 clojure    https://github.com/asdf-community/asdf-clojure.git  790f4f98ff3d9075305ef89b0ef2ab9d5d9b479f
 direnv     https://github.com/asdf-community/asdf-direnv.git   78ba6bb3819ec30f562cb43df3280808e6ac0f2a
-elixir     https://github.com/asdf-vm/asdf-elixir.git          1a238e5e0059763858c339f7e9b525ce212e74b5
+elixir     https://github.com/asdf-vm/asdf-elixir.git          fb53c458d2d97d7f191482937b2e308a4400741f
 gleam      https://github.com/vic/asdf-gleam.git               74337ee4e70a0d8c705c1fed198cf689b4d5bcd4
 golang     https://github.com/asdf-community/asdf-golang.git   e2527a31714da7bc671a684308579f4ef8863281
 leiningen  https://github.com/miorimmax/asdf-lein.git          2ef36bc5459299b7653a2d7531d771d52057417d
