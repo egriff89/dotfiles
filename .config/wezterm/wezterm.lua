@@ -5,11 +5,7 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
 
-local config = {}
-
-if wezterm.config_builder then
-	config = wezterm.config_builder()
-end
+local config = wezterm.config_builder()
 
 -- Appearance settings
 config.color_scheme = "TokyoNight-Storm"

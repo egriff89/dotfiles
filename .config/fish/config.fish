@@ -68,12 +68,14 @@ set -gx NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME"/npm/npmrc
 set -gx NUGET_PACKAGES "$XDG_CACHE_HOME"/NuGetPackages
 set -gx OPAMROOT "$XDG_DATA_HOME"/opam
 set -gx PIPENV_VENV_IN_PROJECT 1
+set -gx ODIN_ROOT "/usr/lib/odin"
 
 set -gx ASDF_DATA_DIR "$HOME"/.local/share/asdf # XDG vars don't work apparently
 
 # Rust
 set -gx RUSTUP_HOME "$XDG_DATA_HOME"/rustup
 set -gx CARGO_HOME "$XDG_DATA_HOME"/cargo
+fish_add_path "$CARGO_HOME"/bin
 
 # Haskell / GHC
 set -gx GHCUP_USE_XDG_DIRS true
