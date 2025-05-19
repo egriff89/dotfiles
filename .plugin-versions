@@ -5,5 +5,4 @@ gleam      https://github.com/vic/asdf-gleam.git               74337ee4e70a0d8c7
 golang     https://github.com/asdf-community/asdf-golang.git   50c8f58237da34223d31ac9e62e5d5f8dcc13f5f
 leiningen  https://github.com/miorimmax/asdf-lein.git          2ef36bc5459299b7653a2d7531d771d52057417d
 opam       https://github.com/asdf-community/asdf-opam.git     83a5180b492c889241ea6e071b56a36f3dbb8dcd
-pipx       https://github.com/yozachar/asdf-pipx.git           31db61862805766b456e8920c635c19872ac87a7
 zig        https://github.com/cheetah/asdf-zig.git             9d11e5b4a4fee4ddf47caf739b1f5ec8d6862384
