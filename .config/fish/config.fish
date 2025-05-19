@@ -24,7 +24,6 @@ set -gx fish_user_paths \
     $HOME/.local/bin \
     $HOME/.local/util \
     $HOME/.luarocks/bin \
-    $HOME/.nimble/bin \
     $HOME/.modular/bin
 
 ### EXPORT ###
@@ -62,6 +61,9 @@ end
 set -gx GOPATH "$XDG_DATA_HOME"/go
 fish_add_path "$GOPATH"/bin
 
+set -gx NIMBLE_DIR "$XDG_DATA_HOME"/nimble
+fish_add_path "$NIMBLE_DIR"/bin
+
 set -gx LEIN_HOME "$XDG_DATA_HOME"/lein
 set -gx GNUPGHOME "$XDG_DATA_HOME"/gnupg
 set -gx NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME"/npm/npmrc
@@ -69,7 +71,9 @@ set -gx NUGET_PACKAGES "$XDG_CACHE_HOME"/NuGetPackages
 set -gx OPAMROOT "$XDG_DATA_HOME"/opam
 set -gx PIPENV_VENV_IN_PROJECT 1
 set -gx ODIN_ROOT "/usr/lib/odin"
+set -gx ANSIBLE_HOME "$XDG_DATA_HOME"/ansible
 
+set -gx ASDF_CONFIG_FILE "$XDG_CONFIG_HOME"/asdf/asdfrc
 set -gx ASDF_DATA_DIR "$HOME"/.local/share/asdf # XDG vars don't work apparently
 
 # Rust
@@ -83,8 +87,8 @@ set -gx STACK_XDG 1
 set -gx STACK_ROOT "$XDG_DATA_HOME"/stack
 
 ### ALIASES ###
-if test -f $HOME/.config/fish/alias.fish
-    source $HOME/.config/fish/alias.fish
+if test -f $XDG_CONFIG_HOME/fish/alias.fish
+    source $XDG_CONFIG_HOME/fish/alias.fish
 end
 
 # Direnv
