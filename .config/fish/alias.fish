@@ -8,9 +8,9 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
 # listing files
-alias ls='eza --icons --group-directories-first'
-alias ll='eza -lg --icons --group-directories-first'
-alias la='eza -lag --icons --group-directories-first'
+alias ls='eza --icons --color=always --group-directories-first'
+alias ll='eza -lg --icons --color=always --group-directories-first --header'
+alias la='eza -lag --icons --color=always --group-directories-first --header'
 
 # editors
 alias nv='/usr/bin/nvim'
