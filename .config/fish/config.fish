@@ -61,15 +61,11 @@ end
 set -gx GOPATH "$XDG_DATA_HOME"/go
 fish_add_path "$GOPATH"/bin
 
-set -gx NIMBLE_DIR "$XDG_DATA_HOME"/nimble
-fish_add_path "$NIMBLE_DIR"/bin
-
 set -gx LEIN_HOME "$XDG_DATA_HOME"/lein
 set -gx GNUPGHOME "$XDG_DATA_HOME"/gnupg
 set -gx NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME"/npm/npmrc
 set -gx NUGET_PACKAGES "$XDG_CACHE_HOME"/NuGetPackages
 set -gx OPAMROOT "$XDG_DATA_HOME"/opam
-set -gx PIPENV_VENV_IN_PROJECT 1
 set -gx ODIN_ROOT "/usr/lib/odin"
 set -gx ANSIBLE_HOME "$XDG_DATA_HOME"/ansible
 
