@@ -1,5 +1,5 @@
 return {
-  { 'folke/neodev.nvim', opts = {} },
+  { 'folke/lazydev.nvim', ft = 'lua', opts = {} },
 
   { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
@@ -14,7 +14,7 @@ return {
       { 'j-hui/fidget.nvim', opts = {} },
     },
     config = function()
-      require('neodev').setup {}
+      require('lazydev').setup {}
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
@@ -154,12 +154,12 @@ return {
 
       -- Manually setup Nushell LSP if it exists.
       -- Still unfinished, per https://github.com/nushell/nushell/issues/11439
-      if os.execute 'which nu' then
-        require('lspconfig')['nu'].setup {
-          cmd = { 'nu', '--lsp' },
-          filetypes = { 'nu' },
-        }
-      end
+      -- if os.execute 'which nu' then
+      --   require('lspconfig')['nu'].setup {
+      --     cmd = { 'nu', '--lsp' },
+      --     filetypes = { 'nu' },
+      --   }
+      -- end
 
       -- Setup Fish lsp
       if os.execute 'which fish-lsp' then
