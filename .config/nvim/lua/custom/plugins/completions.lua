@@ -31,6 +31,7 @@ return {
       -- 'rafamadriz/friendly-snippets',
     },
     config = function()
+      local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
       -- See `:help cmp`
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
@@ -43,6 +44,7 @@ return {
           end,
         },
         completion = { completeopt = 'menu,menuone,noinsert' },
+        cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done()),
 
         -- For an understanding of why these mappings were
         -- chosen, you will need to read `:help ins-completion`
