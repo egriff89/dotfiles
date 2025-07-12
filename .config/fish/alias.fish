@@ -15,7 +15,7 @@ abbr -a pnsu 'pnpm self-update' # Self-update PNPM
 abbr -a pnupg 'pnpm update -g' # Update all global Node.js modules
 
 # Dotfiles bare repo alias
-set git "/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+set git "git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 abbr -a dtf "$git"
 abbr -a dtfs "$git status"
 abbr -a dtfa "$git add"
