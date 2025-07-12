@@ -1,7 +1,7 @@
 function dtf --wraps git -d "Manage dotfiles"
     set args "--git-dir=$HOME/.dotfiles --work-tree=$HOME"
     if test "$argv[1]" = c
-        eval git "$args" commit -m "$argv[2]"
+        eval git "$args" commit -m \"$argv[2]\"
     else if test "$argv[1]" = s
         eval git "$args" status
     else if test "$argv[1]" = a
