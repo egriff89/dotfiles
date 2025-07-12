@@ -20,7 +20,7 @@ abbr -a dtf "$git"
 abbr -a dtfs "$git status"
 abbr -a dtfa "$git add"
 abbr -a dtfp "$git push"
-abbr -a dtfc "$git commit"
+abbr -a dtfc "$git commit -m"
 abbr -a dtfd "$git diff"
 
 # Git abbreviations
