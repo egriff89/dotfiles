@@ -15,11 +15,13 @@ abbr -a pnsu 'pnpm self-update' # Self-update PNPM
 abbr -a pnupg 'pnpm update -g' # Update all global Node.js modules
 
 # Dotfiles bare repo alias
-alias dtf='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-alias dtfs='dtf status'
-alias dtfa='dtf add'
-alias dtfp='dtf push'
-alias dtfc='dtf commit'
+set git "/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+abbr -a dtf "$git"
+abbr -a dtfs "$git status"
+abbr -a dtfa "$git add"
+abbr -a dtfp "$git push"
+abbr -a dtfc "$git commit"
+abbr -a dtfd "$git diff"
 
 # Git abbreviations
 abbr -a gadd 'git add'
