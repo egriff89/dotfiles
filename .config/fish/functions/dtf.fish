@@ -10,7 +10,7 @@ function dtf --wraps git -d "Manage dotfiles"
         if test "$argv[2]" = gh
             eval git "$args" push "$argv[2]" master
         else
-            eval git "$args" push origin main
+            eval git "$args" push
         end
     else if test "$argv[1]" = pl
         eval git "$args" pull
