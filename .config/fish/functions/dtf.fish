@@ -7,11 +7,19 @@ function dtf --wraps git -d "Manage dotfiles"
     else if test "$argv[1]" = a
         eval git "$args" add "$argv[2]"
     else if test "$argv[1]" = ps
-        eval git "$args" push
+        if test "$argv[2]" = gh
+            eval git "$args" push "$argv[2]" master
+        else
+            eval git "$args" push origin main
+        end
     else if test "$argv[1]" = pl
         eval git "$args" pull
     else if test "$argv[1]" = d
-        eval git "$args" diff "$argv[2]"
+        if test "$argv[2]" = s
+            eval git "$args" diff --staged "$argv[3]"
+        else
+            eval git "$args" diff "$argv[2]"
+        end
     else
         eval git "$args" "$argv[1]"
     end
