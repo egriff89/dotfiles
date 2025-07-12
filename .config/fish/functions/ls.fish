@@ -1,3 +1,3 @@
-function ls
-    eza --icons --color=always --group-directories-first
+function ls --wraps eza -a dir
+    eza --icons --color=always --group-directories-first $dir
 end
