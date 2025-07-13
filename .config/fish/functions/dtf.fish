@@ -15,17 +15,11 @@ function dtf --wraps git -d "Manage dotfiles"
 
         # git add
     else if test "$argv[1]" = a
-        eval git "$args" add "$argv[2]"
+        eval git "$args" add "$argv[2..]"
 
         # git push
     else if test "$argv[1]" = ps
-
-        # github mirror
-        if test "$argv[2]" = gh
-            eval git "$args" push "$argv[2]" master
-        else
-            eval git "$args" push
-        end
+        eval git "$args" push "$argv[2..]"
 
         # git pull
     else if test "$argv[1]" = pl
@@ -33,16 +27,14 @@ function dtf --wraps git -d "Manage dotfiles"
 
         # git diff
     else if test "$argv[1]" = d
+        eval git "$args" diff "$argv[2..]"
 
-        # staged changes
-        if test "$argv[2]" = s
-            eval git "$args" diff --staged "$argv[3]"
-        else
-            eval git "$args" diff "$argv[2]"
-        end
+        # git diff --staged
+    else if test "$argv[1]" = ds
+        eval git "$args" diff --staged "$argv[3..]"
 
         # default git
     else
-        eval git "$args" "$argv[1]"
+        eval git "$args" "$argv[1..]"
     end
 end
