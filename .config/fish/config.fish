@@ -18,7 +18,7 @@ set -e fish_user_paths
 set -gx fish_user_paths \
     $XDG_CACHE_HOME \
     $XDG_CONFIG_HOME \
-    $XDG_CONFIG_HOME/emacs/bin \
+    # $XDG_CONFIG_HOME/emacs/bin \
     $XDG_DATA_HOME \
     $XDG_DATA_HOME/asdf/shims \
     $HOME/.local/bin \
@@ -32,7 +32,7 @@ set EDITOR nvim
 set VISUAL nvim
 set DOCKER_HOST unix://$XDG_RUNTIME_DIR/docker.sock
 
-set -gx DOOMDIR "$XDG_CONFIG_HOME"/doom
+# set -gx DOOMDIR "$XDG_CONFIG_HOME"/doom
 set -gx WINEPREFIX "$XDG_DATA_HOME"/wine
 
 ### Set MANPAGER
@@ -66,7 +66,7 @@ set -gx GNUPGHOME "$XDG_DATA_HOME"/gnupg
 set -gx NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME"/npm/npmrc
 set -gx NUGET_PACKAGES "$XDG_CACHE_HOME"/NuGetPackages
 set -gx OPAMROOT "$XDG_DATA_HOME"/opam
-set -gx ODIN_ROOT "/usr/lib/odin"
+set -gx ODIN_ROOT /usr/lib/odin
 set -gx ANSIBLE_HOME "$XDG_DATA_HOME"/ansible
 
 set -gx ASDF_CONFIG_FILE "$XDG_CONFIG_HOME"/asdf/asdfrc
