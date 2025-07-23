@@ -1,8 +1,7 @@
 gleam 1.11.1
 leiningen 2.11.2
 clojure 1.12.1.1550
-golang 1.24.4
-opam 2.3.0
-direnv 2.36.0
+golang 1.24.5
+opam 2.4.1
+direnv 2.37.1
 zig 0.14.0
-asdf-plugin-manager 1.5.0
