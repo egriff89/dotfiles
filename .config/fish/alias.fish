@@ -22,3 +22,18 @@ abbr -a gpl 'git pull'
 abbr -a gps 'git push'
 abbr -a gst 'git status'
 abbr -a gsw 'git switch'
+
+# @fish-lsp-disable-next-line 4004
+function ls --wraps eza -a dir
+    eza --icons --color=always --group-directories-first $dir
+end
+
+# @fish-lsp-disable-next-line 4004
+function la --wraps eza -a dir
+    eza -lag --icons --color=always --group-directories-first --header $dir
+end
+
+# @fish-lsp-disable-next-line 4004
+function ll --wraps eza -a dir
+    eza -lg --icons --color=always --group-directories-first --header $dir
+end
