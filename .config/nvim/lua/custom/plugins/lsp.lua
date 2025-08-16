@@ -165,15 +165,6 @@ return {
       --   }
       -- end
 
-      -- Setup Fish lsp
-      if os.execute 'which fish-lsp' then
-        require('lspconfig')['fish_lsp'].setup {
-          cmd = { 'fish-lsp', 'start' },
-          cmd_env = { fish_lsp_show_client_popups = false },
-          filetypes = { 'fish' },
-        }
-      end
-
       require('mason-lspconfig').setup {
         handlers = {
           function(server_name)
