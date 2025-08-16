@@ -1,63 +1,69 @@
 {
-    "calva.paredit.defaultKeyMap": "original",
-    "editor.detectIndentation": false,
-    "editor.fontSize": 12,
-    "editor.fontLigatures": true,
-    "editor.fontFamily": "JetBrains Mono, FiraCode Nerd Font, monospace",
-    "explorer.confirmDelete": false,
-    "git.confirmSync": false,
-    "gleam.path": "/home/eric/.local/share/asdf/shims/gleam",
     "[gleam]": {
         "editor.defaultFormatter": "gleam.gleam"
     },
     "[go]": {
-        "editor.insertSpaces": false,
-        "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.organizeImports": "never"
-        }
+        },
+        "editor.formatOnSave": true,
+        "editor.insertSpaces": false
     },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[ocaml]": {
+        "editor.defaultFormatter": "badochov.ocaml-formatter",
+        "editor.formatOnSave": true
+    },
+    "[python]": {
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": true,
+        "editor.wordBasedSuggestions": "off"
+    },
+    "[rust]": {
+        "editor.formatOnSave": true
+    },
+    "calva.clojureLspPath": "/usr/bin/clojure-lsp",
+    "calva.fmt.configPath": "CLOJURE-LSP",
+    "calva.paredit.defaultKeyMap": "original",
+    "editor.detectIndentation": false,
+    "editor.fontFamily": "JetBrainsMono Nerd Font, FiraCode Nerd Font, monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 12,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "extensions.allowed": {
+        "*": true
+    },
+    "git.confirmSync": false,
+    "gitlens.launchpad.indicator.enabled": false,
+    "gleam.path": "/home/eric/.local/share/asdf/shims/gleam",
+    "go.inferGopath": true,
     "go.toolsManagement.autoUpdate": true,
+    "ocaml-formatter.eval-opam-env": true,
+    "ocaml-formatter.profile": "own",
     "ocaml.repl.useUtop": true,
     "ocaml.server.extendedHover": true,
     "ocaml.server.syntaxDocumentation": true,
-    "ocaml-formatter.eval-opam-env": true,
-    "ocaml-formatter.profile": "own",
-    "[ocaml]": {
-        "editor.defaultFormatter": "badochov.ocaml-formatter",
-        "editor.formatOnSave": true,
-    },
-    "[python]": {
-        "editor.defaultFormatter": "charliermarsh.ruff",
-        "editor.formatOnSave": true,
-        "editor.wordBasedSuggestions": "off",
-        "diffEditor.ignoreTrimWhitespace": false,
-    },
-    "[rust]": {
-        "editor.formatOnSave": true,
-    },
+    "redhat.telemetry.enabled": true,
     "ruff.nativeServer": "on",
-    "rust-analyzer.check.command": "clippy",
     "rust-analyzer.cargo.sysroot": "/home/eric/.local/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu",
     "rust-analyzer.cargo.sysrootSrc": "/home/eric/.local/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library",
+    "rust-analyzer.check.command": "clippy",
     "security.workspace.trust.untrustedFiles": "open",
-    "svelte.enable-ts-plugin": true,
-    "sync.gist": "2e1b0f8d1eb883f7cb39a1e9e0ac0488",
-    "sync.quietSync": true,
-    "terminal.integrated.enablePersistentSessions": false,
-    "terminal.integrated.gpuAcceleration": "on",
-    "terminal.integrated.fontSize": 12,
     "terminal.integrated.defaultProfile.linux": "fish",
-    "terminal.integrated.fontFamily": "JetBrains Mono",
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.startupEditor": "none",
-    "redhat.telemetry.enabled": true,
-    "explorer.confirmDragAndDrop": false,
-    "extensions.allowed": "*",
-    "zig.zls.enabled": "on",
-    "calva.clojureLspPath": "/usr/bin/clojure-lsp",
-    "calva.fmt.configPath": "CLOJURE-LSP",
-    "gitlens.launchpad.indicator.enabled": false,
-    "terminal.integrated.fontLigatures.enabled": true,
     "terminal.integrated.enableImages": true,
+    "terminal.integrated.enablePersistentSessions": false,
+    "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+    "terminal.integrated.fontLigatures.enabled": true,
+    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.gpuAcceleration": "on",
+    "ty.importStrategy": "fromEnvironment",
+    "ty.path": [
+        "~/.local/bin/ty"
+    ],
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.startupEditor": "none"
 }
