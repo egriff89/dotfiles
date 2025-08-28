@@ -72,14 +72,15 @@ set -gx GHCUP_USE_XDG_DIRS true
 set -gx STACK_XDG 1
 set -gx STACK_ROOT "$XDG_DATA_HOME"/stack
 
-### ALIASES ###
-if test -f $XDG_CONFIG_HOME/fish/alias.fish
-    source $XDG_CONFIG_HOME/fish/alias.fish
-end
-
+# Mise - https://mise.jdx.dev/
 set MISE (which mise)
 if test -f $MISE
     eval ($MISE activate fish | source)
+
+    # Env vars
+    set -gx MISE_DATA_DIR "$XDG_DATA_HOME"/mise
+    set -gx MISE_CACHE_DIR "$XDG_CACHE_HOME"/mise
+    set -gx MISE_CONFIG_DIR "$XDG_CONFIG_HOME"/mise
 
     # Direnv
     direnv hook fish | source
@@ -89,6 +90,11 @@ if test -f $MISE
     if test -f $OPAM
         eval ($OPAM env)
     end
+end
+
+### ALIASES ###
+if test -f $XDG_CONFIG_HOME/fish/alias.fish
+    source $XDG_CONFIG_HOME/fish/alias.fish
 end
 
 ### INIT STARSHIP PROMPT
