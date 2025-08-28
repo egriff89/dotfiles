@@ -1,1 +1,2 @@
-.config/nvim/plugin/packer_compiled.lua
+mise.local.toml
+mise.*.local.toml
