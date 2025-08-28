@@ -2,9 +2,6 @@
 # Author: Eric Griffith
 # http://www.gitlab.com/egriff89
 
-# Some portions borrowed from the following repos:
-#   https://gitlab.com/dwt1/dotfiles
-
 ### Setting XDG environment
 set -gx XDG_DATA_HOME "$HOME/.local/share"
 set -gx XDG_CONFIG_HOME "$HOME/.config"
@@ -18,14 +15,10 @@ set -e fish_user_paths
 set -gx fish_user_paths \
     $XDG_CACHE_HOME \
     $XDG_CONFIG_HOME \
-    # $XDG_CONFIG_HOME/emacs/bin \
     $XDG_DATA_HOME \
-    $XDG_DATA_HOME/asdf/shims \
     $HOME/.local/bin \
     $HOME/.local/util \
-    $HOME/.luarocks/bin \
-    $HOME/.modular/bin
-
+    $HOME/.luarocks/bin
 ### EXPORT ###
 set fish_greeting # Supresses fish's intro message
 set EDITOR nvim
@@ -69,9 +62,6 @@ set -gx OPAMROOT "$XDG_DATA_HOME"/opam
 set -gx ODIN_ROOT /usr/lib/odin
 set -gx ANSIBLE_HOME "$XDG_DATA_HOME"/ansible
 
-set -gx ASDF_CONFIG_FILE "$XDG_CONFIG_HOME"/asdf/asdfrc
-set -gx ASDF_DATA_DIR "$HOME"/.local/share/asdf # XDG vars don't work apparently
-
 # Rust
 set -gx RUSTUP_HOME "$XDG_DATA_HOME"/rustup
 set -gx CARGO_HOME "$XDG_DATA_HOME"/cargo
@@ -87,13 +77,18 @@ if test -f $XDG_CONFIG_HOME/fish/alias.fish
     source $XDG_CONFIG_HOME/fish/alias.fish
 end
 
-# Direnv
-direnv hook fish | source
+set MISE (which mise)
+if test -f $MISE
+    eval ($MISE activate fish | source)
 
-# opam
-set OPAM (which opam)
-if test -f $OPAM
-    eval ($OPAM env)
+    # Direnv
+    direnv hook fish | source
+
+    # opam
+    set OPAM (which opam)
+    if test -f $OPAM
+        eval ($OPAM env)
+    end
 end
 
 ### INIT STARSHIP PROMPT
