@@ -39,25 +39,23 @@ set E:STACK_XDG  = 1
 set E:STACK_ROOT = $E:XDG_DATA_HOME/stack
 set E:OPAMROOT = $E:XDG_DATA_HOME/opam
 set E:PNPM_HOME = $E:XDG_DATA_HOME/pnpm
+set E:MISE_DATA_DIR = $E:XDG_DATA_HOME/mise
+set E:MISE_CACHE_DIR = $E:XDG_CACHE_HOME/mise
+set E:MISE_CONFIG_DIR = $E:XDG_CONFIG_HOME/mise
 
 # Tools
 set E:GNUPGHOME = $E:XDG_DATA_HOME/gnupg
 set E:NPM_CONFIG_USERCONFIG  = $E:XDG_CONFIG_HOME/npm/npmrc
 set E:NUGET_PACKAGES = $E:XDG_CACHE_HOME/NuGetPackages
-set E:ASDF_DATA_DIR  = $E:HOME/.local/share/asdf # XDG vars do not work
 
 ### Path stuff
 # Optional paths, add only if they exist
 var optpaths = [
-    $E:XDG_CONFIG_HOME/emacs/bin
-    $E:XDG_DATA_HOME/asdf/shims
     $E:PNPM_HOME
     $E:GOPATH/bin
     $E:BUN_INSTALL
     $E:HOME/.local/bin
     $E:HOME/.local/util
-    $E:HOME/.nimble/bin
-    $E:HOME/.modular/bin
 ]
 var optpaths-filtered = [(each {|p|
     if (path:is-dir $p) { put $p }
@@ -90,21 +88,9 @@ alias:new zd /usr/bin/zeditor
 
 alias:new grep grep --color=auto
 
-# Pacman / Paru
-alias:new pacs sudo pacman -S
-alias:new pacsyu sudo pacman -Syu
-alias:new pacsyyu sudo pacman -Syyu
-alias:new pacss pacman -Ss
-alias:new pacqi pacman -Qi
-alias:new pacqs pacman -Qs
-alias:new pacq pacman -Q
-alias:new pacqm pacman -Qm
-alias:new parsa paru -Sa
-alias:new parssa paru -Ssa
-alias:new parsua paru -Sua
-alias:new parsyu paru -Syu
+# Pacman
 alias:new unlock sudo rm /var/lib/pacman/db.lck
-# alias:new cleanup sudo pacman -Rns (pacman -Qtdq)
+alias:new cleanup sudo pacman -Rns (pacman -Qtdq)
 
 
 # PNPM
@@ -113,23 +99,11 @@ alias:new pnsu pnpm self-update
 alias:new pnupg pnpm update -g
 
 
-# Flatpak
-alias:new fp flatpak
-alias:new fpup flatpak update
-alias:new fpin flatpak install
-alias:new fpun flatpak uninstall
-
 ### Other utilities
 if ?(pacman -Qq | grep -q 'bat-extras') {
     alias:new diff batdiff
     alias:new man batman
 }
-
-# tar compression
-alias:new tarxz tar -cvJf
-alias:new tarbz tar -cvjf
-alias:new targz tar -cvzf
-alias:new tarcmp tar -cvZf
 
 # get fastest mirrors
 alias:new mirror sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist
@@ -151,6 +125,10 @@ alias:new gitc git commit
 alias:new gitps git push
 alias:new gitco git checkout
 alias:new gitsw git switch
+
+if (eq (which mise) $E:XDG_DATA_HOME/mise) {
+    eval (mise activate fish | slurp)
+}
 
 ### Init Starship and Zoxide
 eval (starship init elvish | slurp)
