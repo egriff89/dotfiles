@@ -32,6 +32,7 @@
     "editor.fontFamily": "JetBrainsMono Nerd Font, FiraCode Nerd Font, monospace",
     "editor.fontLigatures": true,
     "editor.fontSize": 12,
+    "editor.inlayHints.enabled": "offUnlessPressed",
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "extensions.allowed": {
