@@ -23,6 +23,8 @@ abbr -a gps 'git push'
 abbr -a gst 'git status'
 abbr -a gsw 'git switch'
 
+abbr -a ff fastfetch
+
 # @fish-lsp-disable-next-line 4004
 function ls --wraps eza -a dir
     eza --icons --color=always --group-directories-first $dir
