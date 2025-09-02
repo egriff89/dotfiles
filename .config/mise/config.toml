@@ -1,10 +1,10 @@
 [tools]
-gleam = "1.12.0"
-go = "1.25.0"
-leiningen = "2.11.2"
-clojure = "1.12.2.1565"
-direnv = "2.37.1"
-opam = "2.4.1"
+gleam = "latest"
+go = "latest"
+leiningen = "latest"
+clojure = "latest"
+direnv = "latest"
+opam = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["python", "go"]
