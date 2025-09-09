@@ -1,0 +1,10 @@
+[user]
+	name = Eric Griffith
+	email = griffith.eric@pm.me
+	username = egriff89
+
+[core]
+	editor = nvim
+
+[init]
+	defaultBranch = main
