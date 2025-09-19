@@ -2,11 +2,12 @@
 # Author: Eric Griffith
 # https://gitlab.com/egriff89
 
-theme = tokyonight-storm
+### Theme and fonts
+theme = TokyoNight Storm
+font-family = JetBrainsMono Nerd Font
 font-size = 9
 
-### Disable Adwaita decorations and GTK titlebar because not everyone uses or likes GNOME
-gtk-adwaita = false
+### Disable GTK titlebar
 gtk-titlebar = false
 
 ### Window settings
