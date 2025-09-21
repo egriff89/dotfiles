@@ -1,10 +1,11 @@
 [tools]
-gleam = "latest"
 go = "latest"
 leiningen = "latest"
 clojure = "latest"
 direnv = "latest"
 opam = "latest"
+pnpm = "latest"
+lua = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["python", "go"]
