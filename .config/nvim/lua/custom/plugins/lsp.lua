@@ -150,20 +150,12 @@ return {
 
       -- Manually setup Gleam LSP if it exists
       if os.execute 'which gleam' then
-        require('lspconfig')['gleam'].setup {
+        vim.lsp.config('gleam', {
           cmd = { 'gleam', 'lsp' },
           filetypes = { 'gleam' },
-        }
+        })
+        vim.lsp.enable('gleam', true)
       end
-
-      -- Manually setup Nushell LSP if it exists.
-      -- Still unfinished, per https://github.com/nushell/nushell/issues/11439
-      -- if os.execute 'which nu' then
-      --   require('lspconfig')['nu'].setup {
-      --     cmd = { 'nu', '--lsp' },
-      --     filetypes = { 'nu' },
-      --   }
-      -- end
 
       require('mason-lspconfig').setup {
         handlers = {
@@ -173,7 +165,8 @@ return {
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for tsserver)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
+            vim.lsp.config(server_name, server)
+            vim.lsp.enable(server_name, true)
           end,
         },
       }
