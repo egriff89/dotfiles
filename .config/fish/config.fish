@@ -19,6 +19,7 @@ set -gx fish_user_paths \
     $HOME/.local/bin \
     $HOME/.local/util \
     $HOME/.luarocks/bin
+
 ### EXPORT ###
 set fish_greeting # Supresses fish's intro message
 set EDITOR nvim
@@ -39,9 +40,8 @@ set fish_color_command brcyan
 set fish_color_error '#ff6c6b'
 set fish_color_param brcyan
 
-# bun
-set -gx BUN_INSTALL "$HOME/.bun"
-fish_add_path $BUN_INSTALL/bin
+# Fcitx5
+set -gx XMODIFIERS @im=fcitx
 
 # pnpm
 set -gx PNPM_HOME "/home/eric/.local/share/pnpm"
