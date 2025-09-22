@@ -103,6 +103,7 @@ return {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         bashls = {},
+        fish_lsp = {},
         gopls = {},
         jsonls = {},
         pylsp = {},
@@ -143,19 +144,11 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format lua code
+        'gofumpt',
         'goimports',
         'isort',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
-
-      -- Manually setup Gleam LSP if it exists
-      if os.execute 'which gleam' then
-        vim.lsp.config('gleam', {
-          cmd = { 'gleam', 'lsp' },
-          filetypes = { 'gleam' },
-        })
-        vim.lsp.enable('gleam', true)
-      end
 
       require('mason-lspconfig').setup {
         handlers = {

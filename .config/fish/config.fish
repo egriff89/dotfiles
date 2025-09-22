@@ -93,9 +93,7 @@ if test -f $MISE
 end
 
 ### ALIASES ###
-if test -f $XDG_CONFIG_HOME/fish/abbrs.fish
-    source $XDG_CONFIG_HOME/fish/abbrs.fish
-end
+source $XDG_CONFIG_HOME/fish/abbrs.fish
 
 ### INIT STARSHIP PROMPT
 starship init fish | source
