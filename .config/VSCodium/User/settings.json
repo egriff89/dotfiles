@@ -4,7 +4,7 @@
     },
     "[go]": {
         "editor.codeActionsOnSave": {
-            "source.organizeImports": "never"
+            "source.organizeImports": "explicit"
         },
         "editor.formatOnSave": true,
         "editor.insertSpaces": false
@@ -13,7 +13,7 @@
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     "[ocaml]": {
-        "editor.defaultFormatter": "badochov.ocaml-formatter",
+        // "editor.defaultFormatter": "ocamllabs.ocaml-platform",
         "editor.formatOnSave": true
     },
     "[python]": {
@@ -39,12 +39,12 @@
         "*": true
     },
     "git.confirmSync": false,
+    "gitlens.ai.gitkraken.model": "gemini:gemini-2.0-flash",
+    "gitlens.ai.model": "gitkraken",
     "gitlens.launchpad.indicator.enabled": false,
-    "gleam.path": "/home/eric/.local/share/asdf/shims/gleam",
+    "go.formatTool": "gofumpt",
     "go.inferGopath": true,
     "go.toolsManagement.autoUpdate": true,
-    "ocaml-formatter.eval-opam-env": true,
-    "ocaml-formatter.profile": "own",
     "ocaml.repl.useUtop": true,
     "ocaml.server.extendedHover": true,
     "ocaml.server.syntaxDocumentation": true,
@@ -66,5 +66,15 @@
         "~/.local/bin/ty"
     ],
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
+    "hy.paredit.defaultKeyMap": "original",
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
 }
