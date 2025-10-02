@@ -16,6 +16,7 @@ set -gx fish_user_paths \
     $XDG_CACHE_HOME \
     $XDG_CONFIG_HOME \
     $XDG_DATA_HOME \
+    $XDG_CONFIG_HOME/emacs/bin \
     $HOME/.local/bin \
     $HOME/.local/util \
     $HOME/.luarocks/bin
