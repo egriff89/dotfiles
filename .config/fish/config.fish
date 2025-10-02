@@ -27,7 +27,7 @@ set EDITOR nvim
 set VISUAL nvim
 set DOCKER_HOST unix://$XDG_RUNTIME_DIR/docker.sock
 
-# set -gx DOOMDIR "$XDG_CONFIG_HOME"/doom
+set -gx DOOMDIR "$XDG_CONFIG_HOME"/doom
 set -gx WINEPREFIX "$XDG_DATA_HOME"/wine
 
 ### Set MANPAGER
