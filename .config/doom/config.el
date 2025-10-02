@@ -7,7 +7,7 @@
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
 (setq user-full-name "Eric Griffith"
-      user-mail-address "eric.griffith42@gmail.com")
+      user-mail-address "griffith.eric@pm.me")
 
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
@@ -29,7 +29,7 @@
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
 ;; refresh your font settings. If Emacs still can't find your font, it likely
 ;; wasn't installed correctly. Font issues are rarely Doom issues!
-(setq doom-font (font-spec :family "JetBrains Mono" :size 12))
+(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 12))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -103,17 +103,17 @@
 (map! :leader
       :desc "Comment or uncomment lines"              "TAB TAB" #'comment-line
       (:prefix ("t" . "toggle")
-               :desc "Toggle line numbers"            "l" #'doom/toggle-line-numbers
-               :desc "Toggle line highlight in frame" "h" #'hl-line-mode
-               :desc "Toggle line highlight globally" "H" #'global-hl-line-mode
-               :desc "Toggle truncate lines"          "t" #'toggle-truncate-lines))
+       :desc "Toggle line numbers"            "l" #'doom/toggle-line-numbers
+       :desc "Toggle line highlight in frame" "h" #'hl-line-mode
+       :desc "Toggle line highlight globally" "H" #'global-hl-line-mode
+       :desc "Toggle truncate lines"          "t" #'toggle-truncate-lines))
 
 ;; Rainbow mode displays actual color for any hex value color.
 (define-globalized-minor-mode global-rainbow-mode rainbow-mode
   (lambda ()
-     (when (not (memq major-mode
-                      (list 'org-agenda-mode)))
-       (rainbow-mode 1))))
+    (when (not (memq major-mode
+                     (list 'org-agenda-mode)))
+      (rainbow-mode 1))))
 (global-rainbow-mode 1)
 
 ;; Various shell settings
@@ -123,3 +123,18 @@
 (map! :leader
       :desc "Vterm toggle" "v t" #'+vterm/toggle
       :desc "Eshell"       "e s" #'+eshell/toggle)
+
+;; Enable fish lsp
+(require 'lsp-mode)
+
+(lsp-register-client
+ (make-lsp-client
+  :new-connection (lsp-stdio-connection '("fish-lsp" "start"))
+  :activation-fn (lsp-activate-on "fish")
+  :server-id 'fish-lsp))
+
+(add-to-list 'lsp-language-id-configuration '(fish-mode . "fish"))
+(add-hook 'fish-mode-hook #'lsp)
+
+;; Enable mise
+(add-hook 'after-init-hook #'global-mise-mode)
