@@ -82,7 +82,8 @@
 ;;
 
 ;; Never lose the cursor, shines when scrolling
-(beacon-mode 1)
+(use-package! beacon)
+(after! beacon (beacon-mode 1))
 
 ;; Keep buffers for visited files on disk up to date when modified by another program.
 ;; Also enable global auto revert for non-file buffers.
@@ -101,7 +102,7 @@
 
 ;; Line settings
 (map! :leader
-      :desc "Comment or uncomment lines"              "TAB TAB" #'comment-line
+      :desc "Comment or uncomment lines"      "TAB TAB" #'comment-line
       (:prefix ("t" . "toggle")
        :desc "Toggle line numbers"            "l" #'doom/toggle-line-numbers
        :desc "Toggle line highlight in frame" "h" #'hl-line-mode
@@ -135,6 +136,12 @@
 
 (add-to-list 'lsp-language-id-configuration '(fish-mode . "fish"))
 (add-hook 'fish-mode-hook #'lsp)
+
+;; Replace defauly Python formatter (black) to use ruff
+(setf (alist-get 'python-mode apheleia-mode-alist)
+      '(ruff-isort ruff))
+(setf (alist-get 'python-ts-mode apheleia-mode-alist)
+      '(ruff-isort ruff))
 
 ;; Enable mise
 (add-hook 'after-init-hook #'global-mise-mode)
