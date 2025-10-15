@@ -54,6 +54,7 @@
 (package! fish-mode)
 (package! flycheck-aspell)
 (package! mise)
+(package! nushell-mode)
 (package! rainbow-mode)
 (package! ruff-format)
 (package! tldr)

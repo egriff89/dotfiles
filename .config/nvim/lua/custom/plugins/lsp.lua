@@ -150,6 +150,10 @@ return {
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
+      if os.execute 'which nu' then
+        vim.lsp.enable 'nushell'
+      end
+
       require('mason-lspconfig').setup {
         handlers = {
           function(server_name)

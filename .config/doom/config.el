@@ -1,9 +1,5 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-;; Place your private configuration here! Remember, you do not need to run 'doom
-;; sync' after modifying this file!
-
-
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
 (setq user-full-name "Eric Griffith"
@@ -100,14 +96,6 @@
   :bind (:map markdown-mode-command-map
               ("g" . grip-mode)))
 
-;; Line settings
-(map! :leader
-      :desc "Comment or uncomment lines"      "TAB TAB" #'comment-line
-      (:prefix ("t" . "toggle")
-       :desc "Toggle line numbers"            "l" #'doom/toggle-line-numbers
-       :desc "Toggle line highlight in frame" "h" #'hl-line-mode
-       :desc "Toggle line highlight globally" "H" #'global-hl-line-mode
-       :desc "Toggle truncate lines"          "t" #'toggle-truncate-lines))
 
 ;; Rainbow mode displays actual color for any hex value color.
 (define-globalized-minor-mode global-rainbow-mode rainbow-mode
@@ -117,15 +105,24 @@
       (rainbow-mode 1))))
 (global-rainbow-mode 1)
 
+;; Toggles 
+(map! :leader
+      :desc "Comment or uncomment lines"      "TAB TAB" #'comment-line
+      (:prefix ("t" . "toggle")
+       :desc "Toggle line numbers"            "l" #'doom/toggle-line-numbers
+       :desc "Toggle line highlight in frame" "h" #'hl-line-mode
+       :desc "Toggle line highlight globally" "H" #'global-hl-line-mode
+       :desc "Toggle truncate lines"          "t" #'toggle-truncate-lines
+       :desc "Toggle vterm split"             "v" #'+vterm/toggle
+       :desc "Toggle eshell split"            "e" #'+eshell/toggle))
+
 ;; Various shell settings
 (setq shell-file-name (executable-find "bash"))
 (setq-default vterm-shell (executable-find "fish"))
 (setq-default explicit-shell-file-name (executable-find "fish"))
-(map! :leader
-      :desc "Vterm toggle" "v t" #'+vterm/toggle
-      :desc "Eshell"       "e s" #'+eshell/toggle)
 
-;; Enable fish lsp
+
+;; Enable extra LSP servers
 (require 'lsp-mode)
 
 (lsp-register-client
@@ -133,15 +130,17 @@
   :new-connection (lsp-stdio-connection '("fish-lsp" "start"))
   :activation-fn (lsp-activate-on "fish")
   :server-id 'fish-lsp))
-
 (add-to-list 'lsp-language-id-configuration '(fish-mode . "fish"))
 (add-hook 'fish-mode-hook #'lsp)
 
-;; Replace defauly Python formatter (black) to use ruff
-(setf (alist-get 'python-mode apheleia-mode-alist)
-      '(ruff-isort ruff))
-(setf (alist-get 'python-ts-mode apheleia-mode-alist)
-      '(ruff-isort ruff))
+(lsp-register-client
+ (make-lsp-client
+  :new-connection (lsp-stdio-connection '("nu" "--lsp"))
+  :activation-fn (lsp-activate-on "nu")
+  :server-id "nushell"))
+(add-to-list 'lsp-language-id-configuration '(nushell-mode . "nushell"))
+(add-hook 'nushell-mode-hook #'lsp)
+
 
 ;; Enable mise
 (add-hook 'after-init-hook #'global-mise-mode)
