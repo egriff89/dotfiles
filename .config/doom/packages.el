@@ -53,6 +53,7 @@
 (package! emojify)
 (package! fish-mode)
 (package! flycheck-aspell)
+(package! just-mode)
 (package! mise)
 (package! nushell-mode)
 (package! rainbow-mode)
