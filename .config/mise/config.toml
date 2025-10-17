@@ -2,7 +2,6 @@
 go = "latest"
 leiningen = "latest"
 clojure = "latest"
-direnv = "latest"
 opam = "latest"
 pnpm = "latest"
 uv = "latest"
