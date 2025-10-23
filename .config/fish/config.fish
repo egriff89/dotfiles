@@ -27,12 +27,9 @@ set EDITOR nvim
 set VISUAL nvim
 set DOCKER_HOST unix://$XDG_RUNTIME_DIR/docker.sock
 
+set -x MANPAGER less
 set -gx DOOMDIR "$XDG_CONFIG_HOME"/doom
 set -gx WINEPREFIX "$XDG_DATA_HOME"/wine
-
-### Set MANPAGER
-## "less" as manpager
-set -x MANPAGER less
 
 ### AUTOCOMPLETE AND HIGHLIGHT COLORS ###
 set fish_color_normal brcyan
@@ -45,7 +42,7 @@ set fish_color_param brcyan
 set -gx XMODIFIERS @im=fcitx
 
 # pnpm
-set -gx PNPM_HOME "/home/eric/.local/share/pnpm"
+set -gx PNPM_HOME "$XDG_DATA_HOME/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
     set -gx PATH "$PNPM_HOME" $PATH
 end
@@ -57,21 +54,15 @@ fish_add_path "$GOPATH"/bin
 
 set -gx LEIN_HOME "$XDG_DATA_HOME"/lein
 set -gx GNUPGHOME "$XDG_DATA_HOME"/gnupg
-set -gx NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME"/npm/npmrc
 set -gx NUGET_PACKAGES "$XDG_CACHE_HOME"/NuGetPackages
 set -gx OPAMROOT "$XDG_DATA_HOME"/opam
-set -gx ODIN_ROOT /usr/lib/odin
+set -gx ODIN_ROOT "$HOME"/dev/repos/Odin
 set -gx ANSIBLE_HOME "$XDG_DATA_HOME"/ansible
 
 # Rust
 set -gx RUSTUP_HOME "$XDG_DATA_HOME"/rustup
 set -gx CARGO_HOME "$XDG_DATA_HOME"/cargo
 fish_add_path "$CARGO_HOME"/bin
-
-# Haskell / GHC
-set -gx GHCUP_USE_XDG_DIRS true
-set -gx STACK_XDG 1
-set -gx STACK_ROOT "$XDG_DATA_HOME"/stack
 
 # Mise - https://mise.jdx.dev/
 set MISE (which mise)
@@ -83,9 +74,6 @@ if test -f $MISE
     set -gx MISE_CACHE_DIR "$XDG_CACHE_HOME"/mise
     set -gx MISE_CONFIG_DIR "$XDG_CONFIG_HOME"/mise
 
-    # Direnv
-    direnv hook fish | source
-
     # opam
     set OPAM (which opam)
     if test -f $OPAM
@@ -93,9 +81,9 @@ if test -f $MISE
     end
 end
 
-### ALIASES ###
+### ABBREVIATIONS / ALIASES ###
 source $XDG_CONFIG_HOME/fish/abbrs.fish
 
-### INIT STARSHIP PROMPT
-starship init fish | source
+direnv hook fish | source
 zoxide init fish | source
+starship init fish | source
