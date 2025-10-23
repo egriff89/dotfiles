@@ -111,6 +111,24 @@ return {
         taplo = {},
         ty = {},
 
+        ols = {
+          init_options = {
+            enable_hover = true,
+            enable_snippets = true,
+            enable_semantic_tokens = true,
+            enable_document_symbols = true,
+            collections = {
+              { name = 'base', path = vim.fn.expand '$ODIN_ROOT/base' },
+              { name = 'core', path = vim.fn.expand '$ODIN_ROOT/core' },
+              { name = 'shared', path = vim.fn.expand '$ODIN_ROOT/shared' },
+              { name = 'vendor', path = vim.fn.expand '$ODIN_ROOT/vendor' },
+            },
+            binary = {
+              path = vim.fn.expand '$HOME/.local/bin/ols',
+            },
+          },
+        },
+
         lua_ls = {
           -- cmd = {...},
           -- filetypes { ...},

@@ -20,6 +20,14 @@ return { -- Autoformat
       lua = { 'stylua' },
       python = { 'ruff' },
       go = { 'gofumpt', 'goimports' },
+      odin = { 'odinfmt' },
+    },
+    formatters = {
+      odinfmt = {
+        command = 'odinfmt',
+        args = { '-stdin' },
+        stdin = true,
+      },
     },
     default_format_opts = { lsp_format = 'fallback' },
     format_on_save = { timeout_ms = 500 },
