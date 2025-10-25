@@ -121,6 +121,17 @@
 (setq-default vterm-shell (executable-find "fish"))
 (setq-default explicit-shell-file-name (executable-find "fish"))
 
+;; Golang formatting setup
+;; source: https://github.com/bashbunni/dotfiles/blob/main/doom/.config/doom/config.el
+;; use gofumpt
+(after! lsp-mode
+  (setq lsp-go-use-gofumpt t))
+;; auto organize imports
+(add-hook 'go-mode-hook #'lsp-deferred)
+;; make sure to not have other goimports hooks enabled
+(defun lsp-go-install-save-hooks ()
+  (add-hook 'before-save-hook #'lsp-organize-imports t t))
+(add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
 
 ;; Enable extra LSP servers
 (require 'lsp-mode)
