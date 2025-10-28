@@ -9,22 +9,58 @@
 {
   "buffer_font_size": 13,
   "ui_font_size": 13,
-  "ui_font_family": "JetBrains Mono",
+  "ui_font_family": "JetBrainsMono Nerd Font",
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Tokyo Night"
+    "dark": "Tokyo Night Storm"
+  },
+  "agent": {
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "x_ai",
+      "model": "grok-code-fast-1"
+    },
+    "model_parameters": []
   },
   "languages": {
     "Python": {
-      "language_servers": ["basedpyright", "ruff"]
-    },
-    "Clojure": {
-      "language_servers": ["clojure-lsp"]
-    },
-    "Odin": {
-      "language_servers": ["ols"]
+      "language_servers": ["ruff", "ty"]
     }
   },
-  "lsp": {}
+  "lsp": {
+    "ols": {
+      "initialization_options": {
+        "enable_hover": true,
+        "enable_snippets": true,
+        "enable_procedure_snippet": true,
+        "enable_completion_matching": true,
+        "enable_references": true,
+        "enable_document_symbols": true,
+        "enable_format": true,
+        "enable_document_links": true,
+        "collections": [
+          {
+            "name": "base",
+            "path": "/home/eric/dev/repos/Odin/base"
+          },
+          {
+            "name": "core",
+            "path": "/home/eric/dev/repos/Odin/core"
+          },
+          {
+            "name": "shared",
+            "path": "/home/eric/dev/repos/Odin/shared"
+          },
+          {
+            "name": "vendor",
+            "path": "/home/eric/dev/repos/Odin/vendor"
+          }
+        ]
+      },
+      "binary": {
+        "path": "/home/eric/.local/bin/ols"
+      }
+    } // ols
+  }
 }
