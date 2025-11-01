@@ -1,3 +1,10 @@
+---@param lsp string
+local function check_enable_lsp(lsp)
+  if os.execute('which ' .. lsp) then
+    vim.lsp.enable(lsp)
+  end
+end
+
 return {
   { 'folke/lazydev.nvim', ft = 'lua', opts = {} },
 
@@ -168,8 +175,10 @@ return {
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
-      if os.execute 'which nu' then
-        vim.lsp.enable 'nushell'
+      -- Check and enable any lsp installed locally outside of Mason
+      local local_lsp = { 'nu', 'ocamllsp' }
+      for _, value in ipairs(local_lsp) do
+        check_enable_lsp(value)
       end
 
       require('mason-lspconfig').setup {
