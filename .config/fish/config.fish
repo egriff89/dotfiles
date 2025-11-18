@@ -56,8 +56,21 @@ set -gx LEIN_HOME "$XDG_DATA_HOME"/lein
 set -gx GNUPGHOME "$XDG_DATA_HOME"/gnupg
 set -gx NUGET_PACKAGES "$XDG_CACHE_HOME"/NuGetPackages
 set -gx OPAMROOT "$XDG_DATA_HOME"/opam
-set -gx ODIN_ROOT "$HOME"/dev/repos/Odin
+set -gx ODIN_ROOT "$XDG_DATA_HOME"/Odin
 set -gx ANSIBLE_HOME "$XDG_DATA_HOME"/ansible
+
+# Guile Scheme
+set -gx GUILE_LOAD_PATH "$XDG_DATA_HOME"/scheme-lsp-server/share/guile/site/3.0
+set -gx GUILE_LOAD_COMPILED_PATH "$XDG_DATA_HOME"/scheme-lsp-server/lib/guile/3.0/site-ccache
+set -gx PATH "$XDG_DATA_HOME"/scheme-lsp-server/bin $PATH
+
+function rebuild-scheme-lsp
+    pushd $HOME/dev/repos/scheme-lsp-server/guile
+    make distclean && autoreconf -fi
+    ./configure --prefix="$XDG_DATA_HOME"/scheme-lsp-server && make && make install
+    popd
+    echo "Rebuilt!"
+end
 
 # Rust
 set -gx RUSTUP_HOME "$XDG_DATA_HOME"/rustup
