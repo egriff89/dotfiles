@@ -1,7 +1,9 @@
 ---@param lsp string
-local function check_enable_lsp(lsp)
+---@param config table
+local function check_and_enable_lsp(lsp, config)
   if os.execute('which ' .. lsp) then
-    vim.lsp.enable(lsp)
+    vim.lsp.config(lsp, config)
+    vim.lsp.enable(lsp, true)
   end
 end
 
@@ -162,6 +164,24 @@ return {
         },
       }
 
+      -- Check and enable any lsp installed locally outside of Mason
+      local local_lsp = {
+        nu = {},
+        ocamllsp = {},
+        guile_lsp_server = {
+          cmd = { 'guile-lsp-server' },
+          filetypes = { 'scheme' },
+          root_dir = vim.fs.dirname(vim.fs.find({ '.git', 'Makefile', '*.scm', '*.ss' }, {
+            upward = true,
+            path = vim.api.nvim_buf_get_name(0),
+          })[1]),
+        },
+      }
+
+      for k, server in pairs(local_lsp) do
+        check_and_enable_lsp(k, server)
+      end
+
       require('mason').setup()
 
       -- You can add other tools here that you want Mason to install
@@ -174,12 +194,6 @@ return {
         'isort',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
-
-      -- Check and enable any lsp installed locally outside of Mason
-      local local_lsp = { 'nu', 'ocamllsp' }
-      for _, value in ipairs(local_lsp) do
-        check_enable_lsp(value)
-      end
 
       require('mason-lspconfig').setup {
         handlers = {
