@@ -20,6 +20,7 @@ return { -- Autoformat
       lua = { 'stylua' },
       python = { 'ruff' },
       go = { 'gofumpt', 'goimports' },
+      ocaml = { 'ocamlformat' },
       odin = { 'odinfmt' },
     },
     formatters = {
