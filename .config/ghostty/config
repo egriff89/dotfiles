@@ -21,12 +21,12 @@ keybind = ctrl+]=next_tab
 keybind = ctrl+[=previous_tab
 
 ## Splits
-keybind = shift+ctrl+h=new_split:left
-keybind = shift+ctrl+j=new_split:down
-keybind = shift+ctrl+k=new_split:up
-keybind = shift+ctrl+l=new_split:right
+keybind = shift+ctrl+left=new_split:left
+keybind = shift+ctrl+down=new_split:down
+keybind = shift+ctrl+up=new_split:up
+keybind = shift+ctrl+right=new_split:right
 
-keybind = shift+ctrl+alt+h=goto_split:left
-keybind = shift+ctrl+alt+j=goto_split:bottom
-keybind = shift+ctrl+alt+k=goto_split:top
-keybind = shift+ctrl+alt+l=goto_split:right
+keybind = shift+ctrl+alt+left=goto_split:left
+keybind = shift+ctrl+alt+down=goto_split:bottom
+keybind = shift+ctrl+alt+up=goto_split:top
+keybind = shift+ctrl+alt+right=goto_split:right
