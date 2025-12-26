@@ -1,0 +1,123 @@
+{
+  "theme": "dark",
+  "languages": {
+    "odin": {
+      "extensions": ["odin"],
+      "grammar": "",
+      "comment_prefix": "//",
+      "auto_indent": true,
+      "highlighter": "auto",
+      "textmate_grammar": null,
+      "show_whitespace_tabs": true,
+      "use_tabs": true,
+      "tab_size": 4,
+      "on_save": []
+    },
+    "fish": {
+      "extensions": ["fish"],
+      "grammar": "",
+      "comment_prefix": "#",
+      "auto_indent": true,
+      "highlighter": "auto",
+      "textmate_grammar": null,
+      "show_whitespace_tabs": true,
+      "use_tabs": true,
+      "tab_size": 4
+    },
+    "go": {
+      "extensions": [],
+      "grammar": "",
+      "comment_prefix": null,
+      "show_whitespace_tabs": true,
+      "use_tabs": false,
+      "tab_size": null,
+      "on_save": []
+    },
+    "just": {
+      "extensions": [],
+      "filenames": ["Justfile", "justfile"],
+      "grammar": "",
+      "comment_prefix": "#",
+      "auto_indent": true,
+      "highlighter": "auto",
+      "textmate_grammar": "",
+      "show_whitespace_tabs": false,
+      "use_tabs": true,
+      "tab_size": 4,
+      "on_save": []
+    }
+  },
+  "lsp": {
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "enabled": true,
+      "auto_start": false,
+      "process_limits": {
+        "max_memory_percent": 50,
+        "max_cpu_percent": 90,
+        "enabled": true
+      },
+      "initialization_options": null
+    },
+    "fish": {
+      "command": "fish-lsp",
+      "args": ["start"],
+      "enabled": true,
+      "auto_start": false,
+      "process_limits": {
+        "max_memory_percent": 50,
+        "max_cpu_percent": 90,
+        "enabled": true
+      },
+      "initialization_options": null
+    },
+    "just": {
+      "command": "just-lsp",
+      "args": [],
+      "enabled": true,
+      "auto_start": false,
+      "process_limits": {
+        "max_memory_percent": 50,
+        "max_cpu_percent": 90,
+        "enabled": true
+      },
+      "initialization_options": null
+    },
+    "odin": {
+      "command": "ols",
+      "args": [],
+      "enabled": true,
+      "auto_start": false,
+      "process_limits": {
+        "max_memory_percent": 50,
+        "max_cpu_percent": 90,
+        "enabled": true
+      },
+      "initialization_options": {
+        "enable_hover": true,
+        "enable_snippets": true,
+        "enable_semantic_tokens": true,
+        "enable_document_symbols": true,
+        "collections": [
+          {
+            "name": "base",
+            "path": "/home/eric/.local/share/Odin/base"
+          },
+          {
+            "name": "core",
+            "path": "/home/eric/.local/share/Odin/core"
+          },
+          {
+            "name": "shared",
+            "path": "/home/eric/.local/share/Odin/shared"
+          },
+          {
+            "name": "vendor",
+            "path": "/home/eric/.local/share/Odin/vendor"
+          }
+        ]
+      }
+    }
+  }
+}
