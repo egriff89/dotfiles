@@ -16,7 +16,7 @@ window-inherit-font-size = false
 window-padding-x = 4
 
 ### Keybinds
-keybind = ctrl+t=new_tab
+keybind = ctrl+shift+t=new_tab
 keybind = ctrl+]=next_tab
 keybind = ctrl+[=previous_tab
 
@@ -30,3 +30,4 @@ keybind = shift+ctrl+alt+left=goto_split:left
 keybind = shift+ctrl+alt+down=goto_split:bottom
 keybind = shift+ctrl+alt+up=goto_split:top
 keybind = shift+ctrl+alt+right=goto_split:right
+keybind = shift+enter=text:\x1b\r
