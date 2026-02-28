@@ -115,9 +115,9 @@ return {
         fish_lsp = {},
         gopls = {},
         jsonls = {},
-        pylsp = {},
+        -- pylsp = {},
         ruff = {},
-        taplo = {},
+        tombi = {},
         ty = {},
 
         ols = {
@@ -164,9 +164,9 @@ return {
         },
       }
 
-      -- Check and enable any lsp installed locally outside of Mason
-      local local_lsp = {
-        nu = {},
+      -- LSP servers built locally or not installed with Mason
+      local servers_local = {
+        -- nu = {},
         ocamllsp = {},
         guile_lsp_server = {
           cmd = { 'guile-lsp-server' },
@@ -176,9 +176,18 @@ return {
             path = vim.api.nvim_buf_get_name(0),
           })[1]),
         },
+        dingo_lsp = {
+          cmd = { 'dingo-lsp' },
+          filetypes = { 'dingo' },
+          root_dir = vim.fs.dirname(vim.fs.find({ '.git', 'Makefile', '*.dingo', 'dingo.toml' }, {
+            upward = true,
+            path = vim.api.nvim_buf_get_name(0),
+          })[1]),
+        },
       }
 
-      for k, server in pairs(local_lsp) do
+      -- Verify and enable local servers
+      for k, server in pairs(servers_local) do
         check_and_enable_lsp(k, server)
       end
 
