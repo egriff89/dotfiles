@@ -59,25 +59,18 @@ set -gx OPAMROOT "$XDG_DATA_HOME"/opam
 set -gx ODIN_ROOT "$XDG_DATA_HOME"/Odin
 set -gx ANSIBLE_HOME "$XDG_DATA_HOME"/ansible
 
-# Guile Scheme
-set -gx GUILE_LOAD_PATH "$XDG_DATA_HOME"/scheme-lsp-server/share/guile/site/3.0
-set -gx GUILE_LOAD_COMPILED_PATH "$XDG_DATA_HOME"/scheme-lsp-server/lib/guile/3.0/site-ccache
-set -gx PATH "$XDG_DATA_HOME"/scheme-lsp-server/bin $PATH
-
-function rebuild-scheme-lsp
-    pushd $HOME/dev/repos/scheme-lsp-server/guile
-    make distclean && autoreconf -fi
-    ./configure --prefix="$XDG_DATA_HOME"/scheme-lsp-server && make && make install
-    popd
-    echo "Rebuilt!"
-end
+# For building Xenia-Edge
+set -gx QT_DIR "$XDG_DATA_HOME"/Qt/6.10.2/gcc_64
+set -gx CMAKE_PREFIX_PATH $QT_DIR
+set -gx PKG_CONFIG_PATH "$QT_DIR"/lib/pkgconfig
+fish_add_path "$QT_DIR"/bin
 
 # Rust
 set -gx RUSTUP_HOME "$XDG_DATA_HOME"/rustup
 set -gx CARGO_HOME "$XDG_DATA_HOME"/cargo
 fish_add_path "$CARGO_HOME"/bin
 
-# Mise - https://mise.jdx.dev/
+# Mise-en-place - https://mise.jdx.dev/
 set MISE (which mise)
 if test -f $MISE
     eval ($MISE activate fish | source)

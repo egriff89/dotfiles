@@ -14,7 +14,18 @@ abbr -a pn pnpm
 abbr -a pnsu 'pnpm self-update' # Self-update PNPM
 abbr -a pnupg 'pnpm update -g' # Update all global Node.js modules
 
+# mise
+abbr -a msu 'mise self-update'
+abbr -a mod 'mise outdated --bump'
+abbr -a mup 'mise upgrade'
+
+# uv
+abbr -a uvtup 'uv tool upgrade --all'
+abbr -a uvtin 'uv tool install'
+abbr -a uvtls 'uv tool list'
+
 abbr -a ff fastfetch
+abbr -a gdl gallery-dl
 
 # @fish-lsp-disable-next-line 4004
 function ls -a dir
