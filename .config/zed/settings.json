@@ -7,26 +7,31 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "buffer_font_size": 13,
+  "show_edit_predictions": true,
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_size": 12.0,
   "ui_font_size": 13,
   "ui_font_family": "JetBrainsMono Nerd Font",
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Tokyo Night Storm"
+    "dark": "Tokyo Night Storm",
   },
   "agent": {
-    "default_profile": "ask",
-    "default_model": {
-      "provider": "x_ai",
-      "model": "grok-code-fast-1"
+    "tool_permissions": {
+      "default": "allow",
     },
-    "model_parameters": []
+    "default_profile": "write",
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-latest",
+    },
+    "model_parameters": [],
   },
   "languages": {
     "Python": {
-      "language_servers": ["ruff", "ty"]
-    }
+      "language_servers": ["ty", "!basedpyright", "!python-lsp-server"],
+    },
   },
   "lsp": {
     "ols": {
@@ -42,25 +47,35 @@
         "collections": [
           {
             "name": "base",
-            "path": "/home/eric/dev/repos/Odin/base"
+            "path": "/home/eric/.local/share/Odin/base",
           },
           {
             "name": "core",
-            "path": "/home/eric/dev/repos/Odin/core"
+            "path": "/home/eric/.local/share/Odin/core",
           },
           {
             "name": "shared",
-            "path": "/home/eric/dev/repos/Odin/shared"
+            "path": "/home/eric/.local/share/Odin/shared",
           },
           {
             "name": "vendor",
-            "path": "/home/eric/dev/repos/Odin/vendor"
-          }
-        ]
+            "path": "/home/eric/.local/share/Odin/vendor",
+          },
+        ],
       },
       "binary": {
-        "path": "/home/eric/.local/bin/ols"
-      }
-    } // ols
-  }
+        "path": "/home/eric/.local/bin/ols",
+      },
+    }, // ols
+    "ocamllsp": {
+      "settings": {
+        "inlayHints": {
+          "hintFunctionParams": true,
+          "hintPatternVariables": true,
+          "hintLetBindings": true,
+        },
+        "syntaxDocumentation": true,
+      },
+    },
+  },
 }
