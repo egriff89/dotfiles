@@ -168,14 +168,6 @@ return {
       local servers_local = {
         -- nu = {},
         ocamllsp = {},
-        guile_lsp_server = {
-          cmd = { 'guile-lsp-server' },
-          filetypes = { 'scheme' },
-          root_dir = vim.fs.dirname(vim.fs.find({ '.git', 'Makefile', '*.scm', '*.ss' }, {
-            upward = true,
-            path = vim.api.nvim_buf_get_name(0),
-          })[1]),
-        },
         dingo_lsp = {
           cmd = { 'dingo-lsp' },
           filetypes = { 'dingo' },
