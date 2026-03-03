@@ -7,7 +7,6 @@ pnpm = "latest"
 uv = "latest"
 
 [settings]
-idiomatic_version_file_enable_tools = ["python", "go"]
 always_keep_download = false
 always_keep_install = false
 experimental = true
