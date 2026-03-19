@@ -1,0 +1,29 @@
+let mapleader = " "
+let localleader = " "
+
+syntax on
+colorscheme elflord
+
+" Options
+set nocompatible
+set number
+set relativenumber
+set cursorline
+set tabstop=2
+set shiftwidth=2
+set smarttab
+set smartindent
+
+" Keybinds
+nmap <leader>sf  <cmd>:FZF<cr>
+nmap <leader>nt  <cmd>:NERDTree<cr>
+nmap <leader>ntc <cmd>:NERDTreeClose<cr>
+
+" Plugins
+call plug#begin()
+
+Plug 'tpope/vim-sensible'
+Plug 'preservim/nerdtree'
+Plug 'junegunn/fzf.vim'
+
+call plug#end()
