@@ -46,6 +46,7 @@ set -gx PNPM_HOME "$XDG_DATA_HOME/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
     set -gx PATH "$PNPM_HOME" $PATH
 end
+fish_add_path "$PNPM_HOME/bin"
 # pnpm end
 
 ### Miscellaneous exports
@@ -59,16 +60,19 @@ set -gx OPAMROOT "$XDG_DATA_HOME"/opam
 set -gx ODIN_ROOT "$XDG_DATA_HOME"/Odin
 set -gx ANSIBLE_HOME "$XDG_DATA_HOME"/ansible
 
-# For building Xenia-Edge
-set -gx QT_DIR "$XDG_DATA_HOME"/Qt/6.10.2/gcc_64
-set -gx CMAKE_PREFIX_PATH $QT_DIR
-set -gx PKG_CONFIG_PATH "$QT_DIR"/lib/pkgconfig
-fish_add_path "$QT_DIR"/bin
-
 # Rust
 set -gx RUSTUP_HOME "$XDG_DATA_HOME"/rustup
 set -gx CARGO_HOME "$XDG_DATA_HOME"/cargo
 fish_add_path "$CARGO_HOME"/bin
+
+# bun
+set -gx BUN_INSTALL "$HOME/.bun"
+fish_add_path "$BUN_INSTALL"/bin
+
+# LM Studio CLI
+if test -d "$HOME/.lmstudio"
+    fish_add_path "$HOME/.lmstudio/bin"
+end
 
 # Mise-en-place - https://mise.jdx.dev/
 set MISE (which mise)
@@ -81,11 +85,17 @@ if test -f $MISE
     set -gx MISE_CONFIG_DIR "$XDG_CONFIG_HOME"/mise
 
     # opam
-    set OPAM (which opam)
-    if test -f $OPAM
+    if test -f (which opam)
+        set OPAM (which opam)
         eval ($OPAM env)
     end
 end
+
+# >>> grok installer >>>
+if test -d "$HOME"/.grok
+    fish_add_path "$HOME"/.grok/bin
+end
+# <<< grok installer <<<
 
 ### ABBREVIATIONS / ALIASES ###
 source $XDG_CONFIG_HOME/fish/abbrs.fish
