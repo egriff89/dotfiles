@@ -1,2 +1,8 @@
+# mise
 mise.local.toml
 mise.*.local.toml
+
+# fish
+.config/fish/config.fish.*
+.config/fish/fish_variables
+.config/fish/conf.d
