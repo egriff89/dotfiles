@@ -144,14 +144,5 @@
 (add-to-list 'lsp-language-id-configuration '(fish-mode . "fish"))
 (add-hook 'fish-mode-hook #'lsp)
 
-(lsp-register-client
- (make-lsp-client
-  :new-connection (lsp-stdio-connection '("nu" "--lsp"))
-  :activation-fn (lsp-activate-on "nu")
-  :server-id "nushell"))
-(add-to-list 'lsp-language-id-configuration '(nushell-mode . "nushell"))
-(add-hook 'nushell-mode-hook #'lsp)
-
-
 ;; Enable mise
 (add-hook 'after-init-hook #'global-mise-mode)
