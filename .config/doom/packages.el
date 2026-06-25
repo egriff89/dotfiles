@@ -59,3 +59,5 @@
 (package! ruff-format)
 (package! tldr)
 (package! uv-mode)
+(package! odin-ts-mode
+  :recipe (:host github :repo "Sampie159/odin-ts-mode"))

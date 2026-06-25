@@ -96,7 +96,6 @@
   :bind (:map markdown-mode-command-map
               ("g" . grip-mode)))
 
-
 ;; Rainbow mode displays actual color for any hex value color.
 (define-globalized-minor-mode global-rainbow-mode rainbow-mode
   (lambda ()
@@ -146,3 +145,15 @@
 
 ;; Enable mise
 (add-hook 'after-init-hook #'global-mise-mode)
+
+;; Enable Odin support
+;; https://cephei8.dev/blog/doom-emacs-odin
+(use-package! odin-ts-mode
+  :mode "\\.odin\\'")
+
+(after! treesit
+  (add-to-list 'treesit-language-source-alist
+               '(odin "https://github.com/tree-sitter-grammars/tree-sitter-odin")))
+
+(add-hook 'odin-ts-mode-hook #'lsp-mode)
+(setq lsp-odin-ols-binary-path "~/.local/share/ols/ols")
