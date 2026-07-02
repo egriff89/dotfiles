@@ -1,6 +1,14 @@
+#+title: Doom Config
+
+* User Info
+#+begin_src emacs-lisp
 (setq user-full-name "Eric Griffith"
       user-mail-address "griffith.eric@pm.me")
+#+end_src
 
+* General Settings
+Select settings adapted from https://gitlab.com/dwt1/dotfiles
+#+begin_src emacs-lisp
 (setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 12))
 (setq doom-theme 'doom-one)
 
@@ -23,15 +31,26 @@
                      (list 'org-agenda-mode)))
       (rainbow-mode 1))))
 (global-rainbow-mode 1)
+#+end_src
 
+* Emojify
+Display emojis. Can display Github style emojis like :smile: or plain ascii ones like :)
+#+begin_src emacs-lisp
 (use-package emojify
   :hook (after-init . global-emojify-mode))
+#+end_src
 
+* Markdown/Org
+Enable Github-flavored Markdown/Org preview
+#+begin_src emacs-lisp
 (use-package grip-mode
   :ensure t
   :bind (:map markdown-mode-command-map
               ("g" . grip-mode)))
+#+end_src
 
+* Keybinds
+#+begin_src emacs-lisp
 (map! :leader
       :desc "Comment or uncomment lines"      "TAB TAB" #'comment-line
       (:prefix ("t" . "toggle")
@@ -41,13 +60,26 @@
        :desc "Toggle truncate lines"          "t" #'toggle-truncate-lines
        :desc "Toggle vterm split"             "v" #'+vterm/toggle
        :desc "Toggle eshell split"            "e" #'+eshell/toggle))
+#+end_src
 
+* Shell Settings
+#+begin_src emacs-lisp
 (setq shell-file-name (executable-find "bash"))
 (setq-default vterm-shell (executable-find "fish"))
 (setq-default explicit-shell-file-name (executable-find "fish"))
+#+end_src
 
+* Languages
+
+** LSP
+Enable extra LSP servers
+#+begin_src emacs-lisp
 (require 'lsp-mode)
+#+end_src
 
+** Go
+Golang formatting setup. source: https://github.com/bashbunni/dotfiles/blob/main/doom/.config/doom/config.el
+#+begin_src emacs-lisp
 ;; use gofumpt
 (after! lsp-mode
   (setq lsp-go-use-gofumpt t))
@@ -59,7 +91,11 @@
 (defun lsp-go-install-save-hooks ()
   (add-hook 'before-save-hook #'lsp-organize-imports t t))
 (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
+#+end_src
 
+** Fish
+Register a new LSP client for Fish
+#+begin_src emacs-lisp
 (lsp-register-client
  (make-lsp-client
   :new-connection (lsp-stdio-connection '("fish-lsp" "start"))
@@ -68,7 +104,11 @@
 
 (add-to-list 'lsp-language-id-configuration '(fish-mode . "fish"))
 (add-hook 'fish-mode-hook #'lsp)
+#+end_src
 
+** Odin
+Enable Odin support - https://cephei8.dev/blog/doom-emacs-odin
+#+begin_src emacs-lisp
 (use-package! odin-ts-mode
   :mode "\\.odin\\'")
 
@@ -78,11 +118,22 @@
 
 (add-hook 'odin-ts-mode-hook #'lsp-mode)
 (setq lsp-odin-ols-binary-path "~/.local/share/ols/ols")
+#+end_src
 
+** Python
+Make ruff the default formatter and linter
+#+begin_src emacs-lisp
 (setf (alist-get 'python-mode apheleia-mode-alist)
       '(ruff-isort ruff))
 
 (setf (alist-get 'python-ts-mode apheleia-mode-alist)
       '(ruff-isort ruff))
+#+end_src
 
+* Other Stuff
+
+** Mise-en-place - [[https:mise.jdx.dev]]
+#+begin_src emacs-lisp
 (add-hook 'after-init-hook #'global-mise-mode)
+#+end_src
+
