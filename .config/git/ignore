@@ -1,3 +1,6 @@
+# Aidermacs
+.aider.*
+
 # mise
 mise.local.toml
 mise.*.local.toml
@@ -7,6 +10,5 @@ mise.*.local.toml
 .config/fish/fish_variables
 .config/fish/conf.d
 
-# doom
-.config/doom/.aider.*.md
-.config/doom/config.el.backup
+# General
+.env
