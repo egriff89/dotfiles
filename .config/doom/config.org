@@ -1,4 +1,6 @@
 #+title: Doom Config
+#+author: Eric Griffith
+#+email: griffith.eric@pm.me
 
 * User Info
 #+begin_src emacs-lisp
@@ -14,6 +16,9 @@ Select settings adapted from https://gitlab.com/dwt1/dotfiles
 
 (setq display-line-numbers-type 'relative)
 (setq org-directory "~/Projects/org/")
+
+;; Start maximized
+(add-hook 'window-setup-hook #'toggle-frame-maximized)
 
 ;; Never lose the cursor, shines when scrolling
 (use-package! beacon)
@@ -106,6 +111,19 @@ Register a new LSP client for Fish
 (add-hook 'fish-mode-hook #'lsp)
 #+end_src
 
+** Just
+#+begin_src emacs-lisp
+(lsp-register-client
+ (make-lsp-client
+  :new-connection (lsp-stdio-connection '("just-lsp"))
+  :activation-fn (lsp-activate-on "justfile" "Justfile")
+  :server-id 'just-lsp))
+
+(add-to-list 'lsp-language-id-configuration '(just-mode . "justfile"))
+(add-to-list 'lsp-language-id-configuration '(just-mode . "Justfile"))
+(add-hook #'just-mode-hook #'lsp)
+#+END_src
+
 ** Odin
 Enable Odin support - https://cephei8.dev/blog/doom-emacs-odin
 #+begin_src emacs-lisp
@@ -120,20 +138,53 @@ Enable Odin support - https://cephei8.dev/blog/doom-emacs-odin
 (setq lsp-odin-ols-binary-path "~/.local/share/ols/ols")
 #+end_src
 
-** Python
-Make ruff the default formatter and linter
-#+begin_src emacs-lisp
-(setf (alist-get 'python-mode apheleia-mode-alist)
-      '(ruff-isort ruff))
-
-(setf (alist-get 'python-ts-mode apheleia-mode-alist)
-      '(ruff-isort ruff))
-#+end_src
-
 * Other Stuff
+
+** Dotenv
+#+begin_src emacs-lisp
+(use-package dotenv-mode
+  :ensure t
+  :mode ("\\.env\\'.*" . dotenv-mode))
+
+(use-package dotenv
+  :after projectile
+  :hook
+  (projectile-after-switch-project-hook . (lambda ()
+                                            (dotenv-update-project-env (projectile-project-root)))))
+#+end_src
 
 ** Mise-en-place - [[https:mise.jdx.dev]]
 #+begin_src emacs-lisp
 (add-hook 'after-init-hook #'global-mise-mode)
 #+end_src
 
+*** Aidermacs - [[github:MatthewZMD/aidermacs]]
+AI pair programming with [[github:Aider-AI/aider][Aider]] 
+#+begin_src emacs-lisp
+(use-package aidermacs
+  :bind (("C-c a" . 'aidermacs-transient-menu))
+  :custom 
+  (aidermacs-default-chat-mode 'architect)
+  ;; (aidermacs-default-model "lm_studio/qwen/qwen3.6-27b")
+  (aidermacs-default-model "anthropic/claude-sonnet-4-6")
+  (aidermacs-exit-kills-buffer t))
+#+end_src
+
+** AI Code - [[github:tninja/ai-code-interface.el]]
+Wrapper for OpenCode CLI
+#+begin_src emacs-lisp
+(use-package ai-code
+  :config
+  ;; Set OpenCode as the default backend
+  (ai-code-set-backend 'opencode)
+  
+  ;; Bind the main menu
+  (global-set-key (kbd "C-c o") #'ai-code-menu)
+  
+  ;; Evil mode in AI window
+  (with-eval-after-load 'evil (ai-code-backends-infra-evil-setup))
+  
+  ;; Enable auto-revert buffer so AI code change automatically appears in buffer
+  (global-auto-revert-mode 1)
+  (setq auto-revert-interval 1))
+#+end_src

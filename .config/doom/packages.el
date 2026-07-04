@@ -51,13 +51,21 @@
 
 (package! beacon)
 (package! emojify)
+(package! dotenv
+  :recipe (:host github :repo "pkulev/dotenv.el"))
+(package! dotenv-mode)
 (package! fish-mode)
 (package! flycheck-aspell)
 (package! just-mode)
 (package! mise)
+(package! odin-ts-mode
+  :recipe (:host github :repo "Sampie159/odin-ts-mode"))
 (package! rainbow-mode)
 (package! ruff-format)
 (package! tldr)
 (package! uv-mode)
-(package! odin-ts-mode
-  :recipe (:host github :repo "Sampie159/odin-ts-mode"))
+
+;; AI
+(package! ai-code)
+(package! aidermacs)
+(package! transient)

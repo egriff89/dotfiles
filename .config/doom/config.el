@@ -7,6 +7,9 @@
 (setq display-line-numbers-type 'relative)
 (setq org-directory "~/Projects/org/")
 
+;; Start maximized
+(add-hook 'window-setup-hook #'toggle-frame-maximized)
+
 ;; Never lose the cursor, shines when scrolling
 (use-package! beacon)
 (after! beacon (beacon-mode 1))
@@ -69,6 +72,16 @@
 (add-to-list 'lsp-language-id-configuration '(fish-mode . "fish"))
 (add-hook 'fish-mode-hook #'lsp)
 
+(lsp-register-client
+ (make-lsp-client
+  :new-connection (lsp-stdio-connection '("just-lsp"))
+  :activation-fn (lsp-activate-on "justfile" "Justfile")
+  :server-id 'just-lsp))
+
+(add-to-list 'lsp-language-id-configuration '(just-mode . "justfile"))
+(add-to-list 'lsp-language-id-configuration '(just-mode . "Justfile"))
+(add-hook #'just-mode-hook #'lsp)
+
 (use-package! odin-ts-mode
   :mode "\\.odin\\'")
 
@@ -79,10 +92,37 @@
 (add-hook 'odin-ts-mode-hook #'lsp-mode)
 (setq lsp-odin-ols-binary-path "~/.local/share/ols/ols")
 
-(setf (alist-get 'python-mode apheleia-mode-alist)
-      '(ruff-isort ruff))
+(use-package dotenv-mode
+  :ensure t
+  :mode ("\\.env\\'.*" . dotenv-mode))
 
-(setf (alist-get 'python-ts-mode apheleia-mode-alist)
-      '(ruff-isort ruff))
+(use-package dotenv
+  :after projectile
+  :hook
+  (projectile-after-switch-project-hook . (lambda ()
+                                            (dotenv-update-project-env (projectile-project-root)))))
 
 (add-hook 'after-init-hook #'global-mise-mode)
+
+(use-package aidermacs
+  :bind (("C-c a" . 'aidermacs-transient-menu))
+  :custom 
+  (aidermacs-default-chat-mode 'architect)
+  ;; (aidermacs-default-model "lm_studio/qwen/qwen3.6-27b")
+  (aidermacs-default-model "anthropic/claude-sonnet-4-6")
+  (aidermacs-exit-kills-buffer t))
+
+(use-package ai-code
+  :config
+  ;; Set OpenCode as the default backend
+  (ai-code-set-backend 'opencode)
+  
+  ;; Bind the main menu
+  (global-set-key (kbd "C-c o") #'ai-code-menu)
+  
+  ;; Evil mode in AI window
+  (with-eval-after-load 'evil (ai-code-backends-infra-evil-setup))
+  
+  ;; Enable auto-revert buffer so AI code change automatically appears in buffer
+  (global-auto-revert-mode 1)
+  (setq auto-revert-interval 1))
