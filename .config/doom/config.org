@@ -158,7 +158,7 @@ Enable Odin support - https://cephei8.dev/blog/doom-emacs-odin
 (add-hook 'after-init-hook #'global-mise-mode)
 #+end_src
 
-*** Aidermacs - [[github:MatthewZMD/aidermacs]]
+** Aidermacs - [[github:MatthewZMD/aidermacs]]
 AI pair programming with [[github:Aider-AI/aider][Aider]] 
 #+begin_src emacs-lisp
 (use-package aidermacs
