@@ -27,6 +27,10 @@
       (rainbow-mode 1))))
 (global-rainbow-mode 1)
 
+;; Auto-download ghostel binary on first run
+(with-eval-after-load 'ghostel
+  (setq ghostel-module-auto-install 'download))
+
 (use-package emojify
   :hook (after-init . global-emojify-mode))
 
@@ -41,9 +45,7 @@
        :desc "Toggle line numbers"            "l" #'doom/toggle-line-numbers
        :desc "Toggle line highlight in frame" "h" #'hl-line-mode
        :desc "Toggle line highlight globally" "H" #'global-hl-line-mode
-       :desc "Toggle truncate lines"          "t" #'toggle-truncate-lines
-       :desc "Toggle vterm split"             "v" #'+vterm/toggle
-       :desc "Toggle eshell split"            "e" #'+eshell/toggle))
+       :desc "Toggle truncate lines"          "t" #'toggle-truncate-lines))
 
 (setq shell-file-name (executable-find "bash"))
 (setq-default vterm-shell (executable-find "fish"))
