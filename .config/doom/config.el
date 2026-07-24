@@ -27,10 +27,6 @@
       (rainbow-mode 1))))
 (global-rainbow-mode 1)
 
-;; Auto-download ghostel binary on first run
-(with-eval-after-load 'ghostel
-  (setq ghostel-module-auto-install 'download))
-
 (use-package emojify
   :hook (after-init . global-emojify-mode))
 
@@ -45,10 +41,20 @@
        :desc "Toggle line numbers"            "l" #'doom/toggle-line-numbers
        :desc "Toggle line highlight in frame" "h" #'hl-line-mode
        :desc "Toggle line highlight globally" "H" #'global-hl-line-mode
-       :desc "Toggle truncate lines"          "t" #'toggle-truncate-lines))
+       :desc "Toggle truncate lines"          "t" #'toggle-truncate-lines
+       :desc "Toggle ghostel session"         "g" #'+ghostel/toggle))
+
+(use-package! evil-ghostel
+  :after (ghostel evil)
+  :hook (ghostel-mode . evil-ghostel-mode))
+
+(after! ghostel
+  (evil-define-key 'insert ghostel-semi-char-mode-map (kbd "C-S-V") #'ghostel-yank)
+  (evil-define-key 'insert ghostel-char-mode-map (kbd "C-S-V") #'ghostel-yank))
 
 (setq shell-file-name (executable-find "bash"))
 (setq-default vterm-shell (executable-find "fish"))
+(setq-default ghostel-shell (executable-find "fish"))
 (setq-default explicit-shell-file-name (executable-find "fish"))
 
 (require 'lsp-mode)
@@ -84,15 +90,26 @@
 (add-to-list 'lsp-language-id-configuration '(just-mode . "Justfile"))
 (add-hook #'just-mode-hook #'lsp)
 
-(use-package! odin-ts-mode
-  :mode "\\.odin\\'")
+;; (use-package! odin-ts-mode
+;;   :mode "\\.odin\\'")
 
-(after! treesit
-  (add-to-list 'treesit-language-source-alist
-               '(odin "https://github.com/tree-sitter-grammars/tree-sitter-odin")))
+;; (after! treesit
+;;   (add-to-list 'treesit-language-source-alist
+;;                '(odin "https://github.com/tree-sitter-grammars/tree-sitter-odin")))
 
-(add-hook 'odin-ts-mode-hook #'lsp-mode)
+;; (add-hook 'odin-ts-mode-hook #'lsp-mode)
+
+;; Path to local OLS binary
 (setq lsp-odin-ols-binary-path "~/.local/share/ols/ols")
+
+(require 'drag-stuff)
+(use-package! drag-stuff
+  :defer t
+  :init
+  (map! "<M-up>"     #'drag-stuff-up   
+        "<M-down>"   #'drag-stuff-down)
+  :config
+  (drag-stuff-global-mode t))
 
 (use-package dotenv-mode
   :ensure t
@@ -106,25 +123,18 @@
 
 (add-hook 'after-init-hook #'global-mise-mode)
 
-(use-package aidermacs
-  :bind (("C-c a" . 'aidermacs-transient-menu))
-  :custom 
-  (aidermacs-default-chat-mode 'architect)
-  ;; (aidermacs-default-model "lm_studio/qwen/qwen3.6-27b")
-  (aidermacs-default-model "anthropic/claude-sonnet-4-6")
-  (aidermacs-exit-kills-buffer t))
-
 (use-package ai-code
   :config
   ;; Set OpenCode as the default backend
   (ai-code-set-backend 'opencode)
+
+  (with-eval-after-load 'evil (ai-code-backends-infra-evil-setup))
   
   ;; Bind the main menu
-  (global-set-key (kbd "C-c o") #'ai-code-menu)
-  
-  ;; Evil mode in AI window
-  (with-eval-after-load 'evil (ai-code-backends-infra-evil-setup))
+  (global-set-key (kbd "C-c a") #'ai-code-menu)
   
   ;; Enable auto-revert buffer so AI code change automatically appears in buffer
   (global-auto-revert-mode 1)
   (setq auto-revert-interval 1))
+
+(setq ai-code-backends-infra-terminal-backend 'ghostel)

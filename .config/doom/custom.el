@@ -6,6 +6,9 @@
  '(ai-code-onboarding-auto-show nil)
  '(ai-code-onboarding-seen t)
  '(package-selected-packages '(dotenv-mode))
+ '(safe-local-variable-directories
+   '("/home/eric/exercism/odin/" "/home/eric/.config/doom/"
+     "/home/eric/.config/emacs/"))
  '(warning-suppress-log-types
    '((initialization) (initialization) (initialization) (defvaralias)))
  '(warning-suppress-types '((initialization) (initialization) (defvaralias))))

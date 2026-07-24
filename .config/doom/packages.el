@@ -54,6 +54,7 @@
 (package! dotenv
   :recipe (:host github :repo "pkulev/dotenv.el"))
 (package! dotenv-mode)
+(package! drag-stuff)
 (package! fish-mode)
 (package! flycheck-aspell)
 (package! just-mode)
@@ -62,10 +63,8 @@
   :recipe (:host github :repo "Sampie159/odin-ts-mode"))
 (package! rainbow-mode)
 (package! ruff-format)
+(package! systemd)
 (package! tldr)
-(package! uv-mode)
 
 ;; AI
 (package! ai-code)
-(package! aidermacs)
-(package! transient)
