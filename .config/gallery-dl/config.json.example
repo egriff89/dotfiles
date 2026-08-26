@@ -1,0 +1,19 @@
+{
+  "extractor": {
+    "base-directory": "~/.local/share/gallery-dl",
+    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36",
+    "schalenetwork": {
+      "cbz": false,
+      "crt": "xxx",
+      "format": [
+        "0",
+        "1600",
+        "1280",
+        "980",
+        "780"
+      ],
+      "tags": true,
+      "token": "xxx"
+    }
+  }
+}
