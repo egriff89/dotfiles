@@ -1,0 +1,11 @@
+// https://gdl-org.github.io/docs/configuration.html
+
+amends "extractors/BaseExtractor.pkl"
+import "extractors/Schalenetwork.pkl"
+
+extractor {
+  schalenetwork = new Schalenetwork.Extractor {
+    crt = "xxx"
+    token = "xxx"
+  }
+}

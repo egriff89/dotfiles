@@ -1,0 +1,25 @@
+module Schalenetwork
+
+class Extractor {
+  // Download each gallery as a single `.cbz` file. Requires a token
+  cbz: Boolean = false
+
+  // The crt query parameter value sent when fetching gallery data
+  crt: String
+
+  // The format (resolution) to download images in. Defaults to the first format in the list
+  // "0" = original
+  format: String | Listing<String> = new Listing<String> {
+    "0"
+    "1600"
+    "1280"
+    "980"
+    "780"
+  }
+
+  // Group `tags` by type and provide them as `tags_<type>` metadata fields, for example `tags_artist` or `tags_character`
+  tags: Boolean = true
+
+  // `Authorization` header value used for requests to `https://api.schale.network` to access `favorite` galleries or download `.cbz` archives.
+  token: String
+}
