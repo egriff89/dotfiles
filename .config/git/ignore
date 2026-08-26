@@ -10,5 +10,9 @@ mise.*.local.toml
 .config/fish/fish_variables
 .config/fish/conf.d
 
+# gallery-dl
+.config/gallery-dl/config.json
+.config/gallery-dl/config.pkl
+
 # General
 .env
