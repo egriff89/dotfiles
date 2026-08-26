@@ -1,0 +1,2 @@
+build:
+    pkl eval -f json config.pkl > config.json

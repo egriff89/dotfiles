@@ -5,8 +5,14 @@ Basic config for [gallery-dl](https://github.com/mikf/gallery-dl) using [Pkl](ht
 ### Getting Started
 
 1. Install Pkl
-2. Run this to generate the `config.json`:
+2. Install [just](https://github.com/casey/just)
+3. Rename `config.pkl.example` to `config.pkl`:
 
 ```bash
-pkl eval -f json config.pkl > config.json
+mv config.pkl.example config.pkl
+```
+3. Replace the `xxx` placeholders, add other values as needed, and regenerate the `config.json`:
+
+```bash
+just build
 ```
