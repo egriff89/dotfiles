@@ -2,6 +2,6 @@ module BaseExtractor
 import "../utility/Env.pkl"
 
 extractor {
-  `base-directory` = "~/.local/share/gallery-dl"
+  `base-directory` = Env.env["BASE_DIRECTORY"]
   `user-agent` = Env.env["USER_AGENT"]
 }
