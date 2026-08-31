@@ -2,10 +2,11 @@
 
 amends "extractors/BaseExtractor.pkl"
 import "extractors/Schalenetwork.pkl"
+import "utility/Env.pkl"
 
 extractor {
   schalenetwork = new Schalenetwork.Extractor {
-    crt = "xxx"
-    token = "xxx"
+    crt = Env.env["CRT"]
+    token = Env.env["BEARER_TOKEN"]
   }
 }
