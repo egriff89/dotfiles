@@ -1,2 +1,5 @@
 build:
     pkl eval -f json config.pkl > config.json
+
+build-dev:
+    pkl eval -e ENVIRONMENT=dev -f json config.pkl > config.json
