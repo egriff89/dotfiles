@@ -1,4 +1,4 @@
-module Schalenetwork
+module SchaleNetwork
 
 class Extractor {
   // Download each gallery as a single `.cbz` file. Requires a token

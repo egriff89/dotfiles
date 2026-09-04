@@ -1,11 +1,11 @@
 // https://gdl-org.github.io/docs/configuration.html
 
 amends "extractors/BaseExtractor.pkl"
-import "extractors/Schalenetwork.pkl"
+import "extractors/SchaleNetwork.pkl"
 import "utility/Env.pkl"
 
 extractor {
-  schalenetwork = new Schalenetwork.Extractor {
+  schalenetwork = new SchaleNetwork.Extractor {
     crt = Env.env["CRT"]
     token = Env.env["BEARER_TOKEN"]
   }
