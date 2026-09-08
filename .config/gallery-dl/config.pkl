@@ -1,12 +1,20 @@
 // https://gdl-org.github.io/docs/configuration.html
 
-amends "extractors/BaseExtractor.pkl"
+import "extractors/BaseExtractor.pkl"
 import "extractors/SchaleNetwork.pkl"
+import "extractors/TwitterExtractor.pkl"
+
+import "Downloader.pkl"
 import "utility/Env.pkl"
 
-extractor {
+extractor = (BaseExtractor.extractor) {
   schalenetwork = new SchaleNetwork.Extractor {
     crt = Env.env["CRT"]
     token = Env.env["BEARER_TOKEN"]
   }
+  twitter = new TwitterExtractor.Extractor {
+    videos = Env.env["TWT_VIDEOS"]
+  }
 }
+
+downloader = Downloader.downloader

@@ -1,0 +1,12 @@
+module TwitterExtractor
+
+class Extractor {
+  videos: Boolean | String = true
+  cookies: Listing<String | Null> = new Listing<String | Null> {
+    "brave"
+    null
+    "kwallet"
+    null
+    ".x.com"
+  }
+}
