@@ -1,7 +1,7 @@
 module BaseExtractor
 import "../utility/Env.pkl"
 
-extractor {
+root {
   `base-directory` = Env.env["BASE_DIRECTORY"]
   `user-agent` = Env.env["USER_AGENT"]
 }
