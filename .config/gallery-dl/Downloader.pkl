@@ -1,6 +1,6 @@
 module Downloader
 
-downloader {
+root {
   ytdl {
     enabled = true
   }

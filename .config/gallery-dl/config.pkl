@@ -17,4 +17,4 @@ extractor = (BaseExtractor.extractor) {
   }
 }
 
-downloader = Downloader.downloader
+downloader = Downloader.root
