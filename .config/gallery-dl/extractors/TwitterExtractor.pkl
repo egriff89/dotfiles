@@ -1,12 +1,14 @@
 module TwitterExtractor
 
+import "../utility/Env.pkl"
+
 class Extractor {
   videos: Boolean | String = true
   cookies: Listing<String | Null> = new Listing<String | Null> {
-    "brave"
-    null
-    "kwallet"
-    null
-    ".x.com"
+    Env.env["BROWSER"]    // Browser name to pull cookies from
+    null                  // Optional: Profile name or absolute path to profile directory
+    Env.env["KEYRING"]    // Optional: Keyring for decrypting cookies
+    null                  // Optional: Firefox container name, "none" for only cookies with no container (default)
+    Env.env["TWT_DOMAIN"] // Optional: Domain to extract cookies for. Prefix with a `.` to include all subdomains
   }
 }
