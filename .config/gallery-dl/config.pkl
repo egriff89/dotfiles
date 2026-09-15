@@ -9,11 +9,11 @@ import "utility/Env.pkl"
 
 extractor = (BaseExtractor.root) {
   schalenetwork = new SchaleNetwork.Extractor {
-    crt = Env.env["SCHALE_CRT"]
-    token = Env.env["SCHALE_BEARER_TOKEN"]
+    crt = Env.get("SCHALE_CRT", null) ?? ""
+    token = Env.get("SCHALE_BEARER_TOKEN", null) ?? ""
   }
   twitter = new TwitterExtractor.Extractor {
-    videos = Env.env["TWT_VIDEOS"]
+    videos = Env.get("TWT_VIDEOS", null) ?? ""
   }
 }
 
