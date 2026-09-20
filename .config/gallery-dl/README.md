@@ -4,8 +4,14 @@ Basic config for [gallery-dl](https://github.com/mikf/gallery-dl) using [Pkl](ht
 
 ### Getting Started
 
-1. Install Pkl
-2. Install [just](https://github.com/casey/just)
+1. Install [mise-en-place](https://mise.jdx.dev/) if not already installed
+
+2. Install Pkl and [just](https://github.com/casey/just)
+
+```bash
+mise install --locked
+```
+
 3. Rename `.env.example` to `.env`:
 
 ```bash
