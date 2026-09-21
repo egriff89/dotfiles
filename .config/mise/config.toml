@@ -9,5 +9,4 @@ uv = "latest"
 [settings]
 always_keep_download = false
 always_keep_install = false
-experimental = true
 lockfile = true
