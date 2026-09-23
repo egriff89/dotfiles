@@ -1,4 +1,4 @@
-module Downloader
+module BaseDownloader
 
 root {
   ytdl {

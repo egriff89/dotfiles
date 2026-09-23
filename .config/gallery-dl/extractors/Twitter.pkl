@@ -1,4 +1,4 @@
-module TwitterExtractor
+module Twitter
 
 import "../utility/Env.pkl"
 

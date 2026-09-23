@@ -2,9 +2,9 @@
 
 import "extractors/BaseExtractor.pkl"
 import "extractors/SchaleNetwork.pkl"
-import "extractors/TwitterExtractor.pkl"
+import "extractors/Twitter.pkl"
 
-import "Downloader.pkl"
+import "downloaders/BaseDownloader.pkl"
 import "utility/Env.pkl"
 
 extractor = (BaseExtractor.root) {
@@ -12,9 +12,9 @@ extractor = (BaseExtractor.root) {
     crt = Env.get("SCHALE_CRT", null) ?? ""
     token = Env.get("SCHALE_BEARER_TOKEN", null) ?? ""
   }
-  twitter = new TwitterExtractor.Extractor {
+  twitter = new Twitter.Extractor {
     videos = Env.get("TWT_VIDEOS", null) ?? ""
   }
 }
 
-downloader = Downloader.root
+downloader = BaseDownloader.root
