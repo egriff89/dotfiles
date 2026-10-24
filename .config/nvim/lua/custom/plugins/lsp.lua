@@ -115,7 +115,7 @@ return {
         -- pylsp = {},
         ruff = {},
         tombi = {},
-        ty = {},
+        pyrefly = {},
 
         ols = {
           init_options = {
