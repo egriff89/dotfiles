@@ -60,6 +60,9 @@ set -gx OPAMROOT "$XDG_DATA_HOME"/opam
 set -gx ODIN_ROOT "$XDG_DATA_HOME"/Odin
 set -gx ANSIBLE_HOME "$XDG_DATA_HOME"/ansible
 
+# Added by LM Studio CLI tool (lms)
+set -gx PATH $PATH $HOME/.lmstudio/bin
+
 # Rust
 set -gx RUSTUP_HOME "$XDG_DATA_HOME"/rustup
 set -gx CARGO_HOME "$XDG_DATA_HOME"/cargo
