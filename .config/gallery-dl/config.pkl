@@ -1,6 +1,7 @@
 // https://gdl-org.github.io/docs/configuration.html
 
 import "extractors/BaseExtractor.pkl"
+import "extractors/Patreon.pkl"
 import "extractors/SchaleNetwork.pkl"
 import "extractors/Twitter.pkl"
 
@@ -15,6 +16,7 @@ extractor = (BaseExtractor.root) {
   twitter = new Twitter.Extractor {
     videos = Env.get("TWT_VIDEOS", null) ?? ""
   }
+  patreon = new Patreon.Extractor {}
 }
 
 downloader = BaseDownloader.root

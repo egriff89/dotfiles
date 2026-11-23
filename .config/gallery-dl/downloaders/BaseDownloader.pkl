@@ -3,5 +3,6 @@ module BaseDownloader
 root {
   ytdl {
     enabled = true
+    ["module"] = "yt-dlp"
   }
 }
